@@ -56,11 +56,11 @@ b {
 #name h2 {
 	margin-left: 1px;
 	margin-top: 11px;
-	font-family: Optima, Arial, sans-serif; 
+	font-family: 'Adobe Garamond Pro', Georgia, serif;
 	font-size: 35px; 
 	font-style: normal; 
 	font-variant: normal; 
-	font-weight: 600; 
+	font-weight: 400; 
 }
 
 #mainArea {
@@ -156,7 +156,7 @@ div img {
 }
 
 .sectionTitle h1 {
-	font-size: 1.1em;
+	font-size: 1.2em;
 	color: #E7717D;
 	margin-top: 10px;
 	margin-bottom: 5px;
