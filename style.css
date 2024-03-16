@@ -16,7 +16,7 @@ html, body {
     color: #555;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    background-color: #f4f4f3;
+    background-color: #fbfaf4;
 }
 
 .clear {clear: both;}
@@ -36,14 +36,14 @@ b {
 #cv {
 	width: 100%;
 	max-width: 750px;
-	background: #f4f4f3;
+	background: #fbfaf4;
 	margin: 30px auto;
 }
 
 .mainDetails {
 	padding: 25px 35px;
 	border-bottom: 0px solid #cf8a05;
-	background: #f4f4f3;
+	background: #fbfaf4;
 }
 
 #name h1 {
