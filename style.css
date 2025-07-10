@@ -180,6 +180,12 @@ div img {
 	margin-top: -0.8em;
 }
 
+.sectionContent h6 {
+	display: inline-block;
+	font-weight: 500;
+	color: #ef923b;
+}
+
 .subDetails {
 	font-size: 0.8em;
 	font-style: italic;
