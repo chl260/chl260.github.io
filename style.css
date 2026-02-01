@@ -366,5 +366,24 @@ div img {
     animation-timing-function: ease-in;
 }
 
+/* Styling for Award/Oral Icons */
+.icon-badge {
+    color: #ef923b; /* Your signature orange */
+    vertical-align: middle;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 2px;
+    width: 16px;
+    height: 16px;
+    stroke-width: 2.5px; /* Makes the icon look crisp */
+}
+
+.award-text {
+    color: #ef923b;
+    font-size: 0.85em;
+    font-weight: 600;
+    vertical-align: middle;
+}
+
 
  
