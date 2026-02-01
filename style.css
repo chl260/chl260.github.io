@@ -60,11 +60,12 @@ b {
 #name h2 {
 	margin-left: 1px;
 	margin-top: 11px;
-	font-family: 'Adobe Garamond Pro', Georgia, serif;
+	font-family: 'Playfair Display', serif;
 	font-size: 35px; 
 	font-style: normal; 
 	font-variant: normal; 
-	font-weight: 400; 
+	font-weight: 700;
+	letter-spacing: -0.5px;
 }
 
 #mainArea {
@@ -413,18 +414,17 @@ div img {
     color: #059669;
 }
 
-/* Green version of the pill badge */
 .sectionContent h6.badge-green {
-    color: #059669;            /* Success Green text */
-    background-color: #ECFDF5; /* Very light green background */
-    border: 1px solid #10B981; /* Medium green border */
-    font-size: 0.8em;
-    padding: 0px 8px;
+    color: #059669;            
+    background-color: #ECFDF5; 
+    border: 1px solid #10B981; 
+    font-size: 0.9em;          /* Increased from 0.8em */
+    padding: 2px 10px;         /* Increased padding for better scaling */
     border-radius: 10px;
     margin-left: 5px;
-    vertical-align: baseline;
-    line-height: 1.4;
-    height: 18px;
+    vertical-align: middle;    /* Changed to middle for better alignment with larger font */
+    line-height: 1.2;
+    height: auto;              /* Removed fixed height to allow font to breathe */
     display: inline-flex;
     align-items: center;
 }
@@ -435,6 +435,30 @@ div img {
     width: 12px;
     height: 12px;
     margin-right: 3px;
+}
+
+/* New styles for the split badge look */
+.vb-featured {
+    color: #059669; /* Green text for 'featured by' */
+    font-weight: 600;
+    font-size: 0.85em;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.vb-featured .icon-vb {
+    color: #059669; /* Green icon */
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+    stroke-width: 2.5px;
+}
+
+/* Adjust the badge to have no left margin when following text */
+.sectionContent .vb-featured h6.badge-green {
+    margin-left: 4px; 
+    text-decoration: none;
 }
 
 
