@@ -185,9 +185,19 @@ div img {
 }
 
 .sectionContent h6 {
-	display: inline-block;
-	font-weight: 500;
-	color: #ef923b;
+	display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 0.8em;           /* Slightly smaller font helps fit the line */
+    color: #D97706;            /* */
+    background-color: #FFFBEB; /* */
+    border: 1px solid #FCD34D; /* */
+    padding: 0px 8px;          /* Zero vertical padding to minimize height */
+    border-radius: 10px;       /* Slightly tighter radius for smaller height */
+    margin-left: 5px;
+    vertical-align: baseline;  /* Changed to baseline to sit perfectly on the text line */
+    line-height: 1.4;          /* Matches your standard paragraph line-height */
+    height: 18px;              /* Explicit height to force it to stay within the text bounds */
 }
 
 .subDetails {
@@ -368,14 +378,16 @@ div img {
 
 /* Styling for Award/Oral Icons */
 .icon-badge {
-    color: #ef923b; /* Your signature orange */
-    vertical-align: middle;
-    margin-right: 0px;
-    margin-left: 0px;
-    margin-bottom: 2px;
-    width: 16px;
-    height: 16px;
-    stroke-width: 2.5px; /* Makes the icon look crisp */
+	color: #D97706; 
+    margin-right: 3px;
+    width: 12px;               /* Scaled down from 14px */
+    height: 12px;              /* Scaled down from 14px */
+    stroke-width: 2.5px;
+}
+
+/* Remove link underlining if the pill is inside an <a> tag */
+.sectionContent a h6 {
+    text-decoration: none;
 }
 
 .award-text {
@@ -383,6 +395,46 @@ div img {
     font-size: 0.85em;
     font-weight: 600;
     vertical-align: middle;
+}
+
+.icon-vb {
+    color: #059669; /* Success Green */
+    vertical-align: middle;
+    margin-right: 4px;
+    margin-bottom: 3px; /* Adjusts for baseline alignment */
+    width: 16px;
+    height: 16px;
+    stroke-width: 2.5px;
+    display: inline-block;
+}
+
+/* Optional: If you want the 'featured by' text to also be green */
+.sectionContent b:has(.icon-vb) {
+    color: #059669;
+}
+
+/* Green version of the pill badge */
+.sectionContent h6.badge-green {
+    color: #059669;            /* Success Green text */
+    background-color: #ECFDF5; /* Very light green background */
+    border: 1px solid #10B981; /* Medium green border */
+    font-size: 0.8em;
+    padding: 0px 8px;
+    border-radius: 10px;
+    margin-left: 5px;
+    vertical-align: baseline;
+    line-height: 1.4;
+    height: 18px;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Specific icon color for the green badge */
+.badge-green .icon-badge {
+    color: #059669;
+    width: 12px;
+    height: 12px;
+    margin-right: 3px;
 }
 
 
