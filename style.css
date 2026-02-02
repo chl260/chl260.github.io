@@ -22,7 +22,7 @@ html, body {
 
 /* Ensure the bold tag uses a heavier weight */
 b, strong {
-    font-weight: 1000; 
+    font-weight: 700; 
 }
 
 .clear {clear: both;}
@@ -175,7 +175,7 @@ div img {
 }
 
 .sectionContent h3 {
-    font-weight: 1000; 
+    font-weight: 700; 
 }
 
 .sectionContent h4 {
