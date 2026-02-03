@@ -24,6 +24,7 @@ html, body {
 b, strong {
     font-weight: 700; 
     -webkit-text-stroke: 0.3px;
+    letter-spacing: 0.035em; /* Smooths out bold titles */
 }
 
 .clear {clear: both;}
@@ -178,7 +179,7 @@ div img {
 
 .sectionContent h3 {
     font-weight: 700; 
-    letter-spacing: 0.015em; /* Smooths out bold titles */
+    letter-spacing: 0.035em; /* Smooths out bold titles */
     -webkit-text-stroke: 0.3px;
 }
 
@@ -206,6 +207,7 @@ div img {
     vertical-align: baseline;  /* Changed to baseline to sit perfectly on the text line */
     line-height: 1.4;          /* Matches your standard paragraph line-height */
     height: 18px;              /* Explicit height to force it to stay within the text bounds */
+    -webkit-text-stroke: 0.3px;
 }
 
 .subDetails {
