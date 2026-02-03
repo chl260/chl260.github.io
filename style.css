@@ -16,7 +16,6 @@ html, body {
     color: #555;
     background-color: #f4f4f3;
     font-weight: 400;
-	-webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     letter-spacing: 0.01em; /* Subtle increase in horizontal letter spacing */  
 }
@@ -24,6 +23,7 @@ html, body {
 /* Ensure the bold tag uses a heavier weight */
 b, strong {
     font-weight: 700; 
+    -webkit-text-stroke: 0.3px;
 }
 
 .clear {clear: both;}
@@ -179,6 +179,7 @@ div img {
 .sectionContent h3 {
     font-weight: 700; 
     letter-spacing: 0.015em; /* Smooths out bold titles */
+    -webkit-text-stroke: 0.3px;
 }
 
 .sectionContent h4 {
