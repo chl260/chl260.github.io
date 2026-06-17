@@ -176,6 +176,38 @@ section:last-of-type  { padding-bottom: 8px; }
 
 .clear { clear: both; }
 
+/* ---------- Selected Talks (image card + italic caption) ---------- */
+.talks-section { margin-top: -14px; }
+
+.talks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 20px;
+  margin-top: 6px;
+}
+.talk { margin: 0; }
+.talk-thumb { display: block; }
+.talk-thumb img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+.talk-thumb:hover img { opacity: 0.92; }
+.talk-caption {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+@media (max-width: 640px) {
+  .talks-grid { grid-template-columns: 1fr; }
+}
+.talk-caption a { color: var(--link); }
+.talk-caption a:hover { color: var(--accent); }
+
 /* ============================================================
    Badges & inline markers (Awards, Orals, "featured by")
    ============================================================ */
@@ -222,7 +254,8 @@ section:last-of-type  { padding-bottom: 8px; }
   stroke-width: 2.5px;
   color: var(--green);
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: baseline;
+  transform: translateY(1px);
 }
 .sectionContent a h6 { text-decoration: none; }
 .sectionContent .vb-featured h6.badge-green { margin-left: 0; }
