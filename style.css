@@ -1,0 +1,305 @@
+/* ============================================================
+   Chen-Yu Lee — personal site
+   Cleaned & polished. Keeps the original identity:
+   off-white canvas, coral section headings, blue links.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote,
+a, em, strong, b, i, ul, ol, li, section, article, header, footer,
+nav, figure, img, time {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+article, aside, section, header, footer, nav { display: block; }
+
+/* ---------- Design tokens ---------- */
+:root {
+  --bg:         #fafafa;
+  --ink:        #2b2b2b;   /* headings / bold */
+  --ink-soft:   #333333;   /* body copy */
+  --muted:      #6c6c6c;   /* contact, captions */
+  --accent:     #c8505d;   /* coral — section titles, hover */
+  --link:       #006699;   /* blue — links */
+  --rule:       #e4e3e1;   /* hairline dividers */
+  --max:        750px;
+
+  --green:      #1f8a66;  --green-bg: #e9f6f0;  --green-bd: #7fcdb0;
+  --amber:      #b06a1c;  --amber-bg: #fcf3e2;  --amber-bd: #d9b878;
+}
+
+/* ---------- Base ---------- */
+html, body {
+  font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--ink-soft);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+b, strong { font-weight: 700; color: var(--ink); }
+em, i     { font-style: italic; }
+
+a { color: var(--link); text-decoration: none; transition: color .12s ease; }
+a:hover { color: var(--accent); }
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+p { margin-bottom: 12px; }
+
+/* ---------- Page frame ---------- */
+#cv {
+  width: 100%;
+  max-width: var(--max);
+  margin: 44px auto;
+  padding: 0 24px;
+}
+
+/* ---------- Header ---------- */
+.mainDetails {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-bottom: 22px;
+  margin-bottom: 6px;
+}
+
+#headshot { flex: 0 0 auto; }
+#headshot img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+#name { min-width: 0; }
+#name h1 {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-size: 2.15rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: #111;
+}
+
+#contactDetails { margin-top: 9px; margin-left: 3px; }
+#contactDetails ul { list-style: none; }
+#contactDetails li { font-size: 0.95rem; color: var(--muted); }
+#contactDetails a, a[href^="tel"] { color: var(--link); }
+#contactDetails a:hover { color: var(--accent); }
+
+/* ---------- Sections ---------- */
+section {
+  padding: 10px 0;
+}
+section:first-of-type { padding-top: 8px; }
+section:last-of-type  { padding-bottom: 8px; }
+
+.sectionTitle h1 {
+  font-size: 1.2em;
+  font-weight: 400;
+  color: var(--accent);
+  margin: 10px 0 8px;
+}
+
+.sectionContent { font-size: 0.9rem; line-height: 1.45; color: var(--ink-soft); }
+
+/* intro paragraph + highlight bullets */
+.sectionContent h4 { font-weight: 400; line-height: 1.45; margin-bottom: 10px; }
+.intro-list { list-style: disc; margin: 2px 0 10px 22px; }
+.intro-list > li { margin-bottom: 0; line-height: 1.45; }
+.intro-list h5 { margin-bottom: 0; line-height: 1.45; }
+.sectionContent h5 { font-weight: 400; line-height: 1.45; margin-bottom: 14px; }
+
+/* publication / entry titles — top margin separates entries */
+.sectionContent h3 {
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.45;
+  margin: 21px 0 1px;
+}
+.sectionContent h3:first-child { margin-top: 0; }
+
+.subDetails { font-size: 0.85rem; font-style: italic; color: var(--muted); margin-bottom: 3px; }
+
+/* publication author/venue text: slightly lighter than the bold title */
+.papers-section .sectionContent { color: #555; }
+
+/* intro cards */
+.intro-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 8px 0 8px;
+}
+.intro-card {
+  background: #fff;
+  border: none;
+  border-left: 3px solid #c8505d;
+  border-radius: 0 6px 6px 0;
+  padding: 11px 13px;
+}
+.intro-card-title {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--ink);
+  margin-bottom: 5px;
+}
+.intro-card-body {
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+.intro-card-body a { color: var(--link); }
+.intro-card-body a:hover { color: var(--accent); }
+
+@media (max-width: 640px) {
+  .intro-cards { grid-template-columns: 1fr; }
+}
+.keySkills {
+  list-style: none;
+  column-count: 3;
+  column-gap: 28px;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+.keySkills li { margin-bottom: 3px; }
+
+.clear { clear: both; }
+
+/* ---------- Selected Talks (image card + italic caption) ---------- */
+.talks-section { margin-top: -14px; }
+
+.talks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 20px;
+  margin-top: 6px;
+}
+.talk { margin: 0; }
+.talk-thumb { display: block; }
+.talk-thumb img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+  filter: contrast(1.03);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  transition: filter .15s ease, box-shadow .15s ease;
+}
+.talk-thumb:hover img {
+  filter: contrast(1.03) brightness(1.02);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+.talk-caption {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+@media (max-width: 640px) {
+  .talks-grid { grid-template-columns: 1fr; }
+}
+.talk-caption a { color: var(--link); }
+.talk-caption a:hover { color: var(--accent); }
+
+/* ============================================================
+   Badges & inline markers (Awards, Orals, "featured by")
+   ============================================================ */
+.sectionContent h6 {                 /* amber pill: Oral, Spotlight, etc. */
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  -webkit-text-stroke: 0.3px;
+  color: var(--amber);
+  background: var(--amber-bg);
+  border: 1px solid var(--amber-bd);
+  padding: 1px 8px;
+  border-radius: 10px;
+  margin-left: 5px;
+  line-height: 1.4;
+  vertical-align: baseline;
+}
+
+.sectionContent h6.badge-green {     /* green pill: VentureBeat, etc. */
+  color: var(--green);
+  background: var(--green-bg);
+  border-color: var(--green-bd);
+  font-size: 0.78rem;
+  padding: 1px 8px;
+  align-self: baseline;
+}
+
+.icon-badge { width: 12px; height: 12px; stroke-width: 2.5px; }
+.badge-green .icon-badge { color: var(--green); }
+
+.vb-featured {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  color: var(--green);
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+.vb-featured a { color: inherit; }
+.icon-vb {
+  width: 14px; height: 14px;
+  stroke-width: 2.5px;
+  color: var(--green);
+  display: inline-block;
+  vertical-align: baseline;
+  transform: translateY(1px);
+}
+.sectionContent a h6 { text-decoration: none; }
+.sectionContent .vb-featured h6.badge-green { margin-left: 0; }
+
+.award-text { color: #ef923b; font-size: 0.85rem; font-weight: 600; }
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 640px) {
+  #cv { margin: 22px auto; padding: 0 18px; }
+
+  .mainDetails {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+  #headshot img { width: 110px; height: 110px; }
+  #name h1 { font-size: 1.95rem; }
+  #contactDetails { margin-top: 4px; }
+
+  .keySkills { column-count: 1; }
+}
+
+@media (max-width: 420px) {
+  #name h1 { font-size: 1.7rem; }
+}
+
+@media print {
+  body { background: #fff; }
+  #cv  { margin: 0; max-width: 100%; }
+  a    { color: #111; }
+  .sectionContent h6, .badge-green { border: 0; background: transparent; padding: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

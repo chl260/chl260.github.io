@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <g transform="translate(61,67) scale(0.92)" fill="#C8505D">
+    <g id="p"><path d="M0,-6 C-18,-22 -24,-44 -9,-60 C2,-70 16,-63 13,-47 C10,-31 7,-19 0,-6 Z"/></g>
+    <use href="#p" transform="rotate(0) scale(0.98)"/>
+    <use href="#p" transform="rotate(72) scale(1.06)"/>
+    <use href="#p" transform="rotate(144) scale(0.92)"/>
+    <use href="#p" transform="rotate(216) scale(1.08)"/>
+    <use href="#p" transform="rotate(288) scale(0.95)"/>
+  </g>
+</svg>
