@@ -28,8 +28,8 @@ article, aside, section, header, footer, nav { display: block; }
   --rule:       #e4e3e1;   /* hairline dividers */
   --max:        750px;
 
-  --green:      #059669;  --green-bg: #ecfdf5;  --green-bd: #10b981;
-  --amber:      #d97706;  --amber-bg: #fffbeb;  --amber-bd: #fcd34d;
+  --green:      #1f8a66;  --green-bg: #e9f6f0;  --green-bd: #7fcdb0;
+  --amber:      #b06a1c;  --amber-bg: #fcf3e2;  --amber-bd: #d9b878;
 }
 
 /* ---------- Base ---------- */
@@ -142,7 +142,7 @@ section:last-of-type  { padding-bottom: 8px; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  margin: 8px 0 14px;
+  margin: 8px 0 8px;
 }
 .intro-card {
   background: #fff;
