@@ -371,7 +371,7 @@
     var current = null;
     Array.prototype.forEach.call(container.childNodes, function (node) {
       if (node.nodeType === 1 && node.tagName === 'H3') {
-        current = { category: node.getAttribute('data-category'), nodes: [node] };
+        current = { category: node.getAttribute('data-category'), h3: node, nodes: [node] };
         groups.push(current);
       } else if (current) {
         current.nodes.push(node);
@@ -399,11 +399,21 @@
         var filter = tab.getAttribute('data-filter');
         tabs.forEach(function (t) { t.classList.remove('active'); });
         tab.classList.add('active');
+        // CSS only zeroes the top margin on the DOM's literal first <h3>
+        // (:first-child), which isn't necessarily the first *visible* one
+        // once filtered — so track and set that margin here instead.
+        var firstShown = false;
         groups.forEach(function (g) {
           var show = filter === 'all' || g.category === filter;
           g.nodes.forEach(function (n) {
             if (n.nodeType === 1) n.style.display = show ? '' : 'none';
           });
+          if (show && !firstShown) {
+            g.h3.style.marginTop = '0';
+            firstShown = true;
+          } else {
+            g.h3.style.marginTop = '';
+          }
         });
       });
     });
