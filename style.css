@@ -137,6 +137,32 @@ section:last-of-type  { padding-bottom: 8px; }
 /* publication author/venue text: slightly lighter than the bold title */
 .papers-section .sectionContent { color: #555; }
 
+/* topic filter tabs above the papers list */
+.paper-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 4px 0 14px;
+}
+.paper-tab {
+  font-family: inherit;
+  font-size: 0.78rem;
+  line-height: 1.2;
+  color: var(--muted);
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 5px 12px;
+  cursor: pointer;
+  transition: color .12s ease, border-color .12s ease, background .12s ease;
+}
+.paper-tab:hover { color: var(--accent); border-color: var(--accent); }
+.paper-tab.active {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
 /* intro cards */
 .intro-cards {
   display: grid;
