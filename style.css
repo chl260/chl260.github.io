@@ -123,14 +123,21 @@ section:last-of-type  { padding-bottom: 8px; }
 .intro-list h5 { margin-bottom: 0; line-height: 1.45; }
 .sectionContent h5 { font-weight: 400; line-height: 1.45; margin-bottom: 14px; }
 
-/* publication / entry titles — top margin separates entries */
+/* publication / entry titles */
 .sectionContent h3 {
   font-weight: 700;
   color: var(--ink);
   line-height: 1.45;
-  margin: 21px 0 1px;
+  margin: 0 0 1px;
 }
-.sectionContent h3:first-child { margin-top: 0; }
+
+/* each paper is one atomic block — the top margin that separates entries
+   lives here (not on the h3) so a filtered-out entry can never leave a
+   stray line of its own body text behind when its heading is hidden */
+.paper-entry { margin-top: 21px; }
+.paper-entry:first-of-type,
+.paper-entry.is-first-visible { margin-top: 0; }
+.paper-entry[hidden] { display: none; }
 
 .subDetails { font-size: 0.85rem; font-style: italic; color: var(--muted); margin-bottom: 3px; }
 
