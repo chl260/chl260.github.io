@@ -144,6 +144,9 @@ section:last-of-type  { padding-bottom: 8px; }
 /* publication author/venue text: slightly lighter than the bold title */
 .papers-section .sectionContent { color: #555; }
 
+/* keep my own name intact instead of letting it split across two lines */
+.author-self { white-space: nowrap; }
+
 /* topic filter tabs above the papers list */
 .paper-tabs {
   display: flex;
