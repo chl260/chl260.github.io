@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Publications · Chen-Yu Lee</title>
+<link rel="canonical" href="https://chenyulee.com/publications.html" />
+
+<meta name="description" content="Chen-Yu Lee leads research on long-horizon agents: how they research, remember, and improve themselves. Principal Scientist &amp; Director, Google Cloud AI Research. Test-of-Time Award, AISTATS 2025.">
+<meta name="author" content="Chen-Yu Lee">
+
+<!-- Social / link previews (what people see when your link is pasted into Slack, X, email) -->
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://chenyulee.com/publications.html">
+<meta property="og:title" content="Publications · Chen-Yu Lee">
+<meta property="og:description" content="Research on agents that research, remember, and improve themselves, from papers to Gemini Deep Research Max.">
+<meta property="og:image" content="https://chenyulee.com/assets/profile/me3.JPG">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@chl260">
+<meta name="twitter:creator" content="@chl260">
+<meta name="twitter:title" content="Chen-Yu Lee: Long-horizon agents">
+<meta name="twitter:description" content="Research on agents that research, remember, and improve themselves, from papers to Gemini Deep Research Max.">
+<meta name="twitter:image" content="https://chenyulee.com/assets/profile/me3.JPG">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&family=Rokkitt:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ---- v2 additions (kept inline so style.css / the live page are untouched) ---- */
+:root { --card: #fff; --title: #111; --paper-ink: #555; --todo-bg: #fff8d6; --todo-bd: #e6c84f; }
+
+.mainDetails { gap: 34px; }
+@media (max-width: 640px) { .mainDetails { gap: 16px; } }
+.tagline { font-size: 0.95rem; line-height: 1.4; color: var(--muted); margin-top: 9px; margin-left: 2px; }
+#contactDetails { margin-top: 6px; }
+
+.thesis { font-size: 1.12rem !important; line-height: 1.5 !important; color: var(--ink); margin-bottom: 12px !important; }
+
+.proof-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 2px 0 16px; }
+.proof {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.8rem; line-height: 1.3; color: var(--ink-soft);
+  background: var(--card); border: 1px solid var(--rule); border-radius: 999px;
+  padding: 5px 12px;
+}
+.proof b { color: var(--ink); }
+.proof svg { width: 13px; height: 13px; color: var(--accent); flex: 0 0 auto; }
+
+.subhead { font-weight: 700; font-size: 0.92rem; color: var(--ink); margin: 14px 0 2px; }
+
+.agenda { list-style: none; margin: 4px 0 6px; padding: 0; }
+.agenda li { padding: 10px 0; border-top: 1px solid var(--rule); }
+.agenda li:first-child { border-top: 0; padding-top: 2px; }
+.agenda .q { font-weight: 700; color: var(--ink); display: block; margin-bottom: 2px; }
+
+.featured .paper-entry { margin-top: 16px; }
+.featured .paper-entry:first-child { margin-top: 0; }
+.why { display: block; color: var(--ink-soft); margin: 1px 0 2px; }
+.why::before { content: "→ "; color: var(--accent); }
+
+details.all-papers { margin-top: 22px; }
+details.all-papers > summary {
+  cursor: pointer; list-style: none; display: inline-block;
+  font-size: 0.85rem; color: var(--link);
+  border: 1px solid var(--rule); background: var(--card); border-radius: 999px; padding: 6px 14px;
+}
+details.all-papers > summary::-webkit-details-marker { display: none; }
+details.all-papers > summary:hover { color: var(--accent); border-color: var(--accent); }
+details.all-papers[open] > summary { margin-bottom: 14px; }
+
+.role { color: var(--muted); font-style: italic; }
+
+/* Draft-only placeholders: fill in or delete before publishing */
+.todo { background: var(--todo-bg); border: 1px dashed var(--todo-bd); border-radius: 6px; padding: 8px 12px; margin: 6px 0 10px; font-size: 0.85rem; color: #6b5500; }
+
+#name h1 { color: var(--title); }
+.intro-card { background: var(--card); }
+.paper-tab { background: var(--card); }
+.papers-section .sectionContent { color: var(--paper-ink); }
+
+.contact-links { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 9px; }
+.contact-links .sep { color: var(--muted); font-size: 0.88rem; }
+.contact-links a { display: inline-flex; align-items: center; gap: 6px; text-decoration: none; }
+#contactDetails .contact-links a { color: var(--link); font-size: 0.88rem; transition: color .12s ease; }
+#contactDetails { margin-top: 9px; margin-left: 2px; }
+#contactDetails li { line-height: 1.4; }
+#contactDetails .contact-links a:hover,
+#contactDetails .contact-links a:focus-visible { color: var(--accent); }
+@media (max-width: 640px) { .contact-links { justify-content: center; } }
+
+/* Dark mode: follows the device unless the visitor picks with the toggle */
+:root[data-theme="dark"] { --bg: #15161a; --ink: #ececec; --ink-soft: #cfcfcf; --muted: #9a9a9a;
+    --accent: #ec7b86; --link: #6cb8e6; --rule: #2c2e34;
+    --card: #1d1f24; --title: #f5f5f5; --paper-ink: #b4b4b4;
+    --green: #5fcfa3; --green-bg: #15302a; --green-bd: #2f6b56;
+    --amber: #e8b36a; --amber-bg: #33280f; --amber-bd: #6b5427;
+    --todo-bg: #3a3212; --todo-bd: #8a7426; }
+:root[data-theme="dark"] .todo { color: #f0dc8a; }
+:root[data-theme="dark"] .talk-thumb img { filter: brightness(.92); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #15161a; --ink: #ececec; --ink-soft: #cfcfcf; --muted: #9a9a9a;
+    --accent: #ec7b86; --link: #6cb8e6; --rule: #2c2e34;
+    --card: #1d1f24; --title: #f5f5f5; --paper-ink: #b4b4b4;
+    --green: #5fcfa3; --green-bg: #15302a; --green-bd: #2f6b56;
+    --amber: #e8b36a; --amber-bg: #33280f; --amber-bd: #6b5427;
+    --todo-bg: #3a3212; --todo-bd: #8a7426; }
+  :root:not([data-theme="light"]) .todo { color: #f0dc8a; }
+  :root:not([data-theme="light"]) .talk-thumb img { filter: brightness(.92); }
+}
+
+/* Theme toggle */
+.theme-toggle {
+  position: fixed; top: 14px; right: 14px; z-index: 10;
+  width: 38px; height: 38px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--card); color: var(--muted);
+  border: 1px solid var(--rule); cursor: pointer; padding: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+  transition: color .12s ease, border-color .12s ease;
+}
+.theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
+.theme-toggle svg { width: 18px; height: 18px; }
+.theme-toggle .icon-sun { display: none; }
+.is-dark .theme-toggle .icon-sun { display: block; }
+.is-dark .theme-toggle .icon-moon { display: none; }
+@media print { .theme-toggle { display: none; } }
+
+/* publications page header */
+.pub-header { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-bottom: 6px; }
+.pub-header .home { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 1.6rem; color: var(--title); text-decoration: none; letter-spacing: -0.01em; }
+.pub-header .home:hover { color: var(--accent); }
+.pub-nav { font-size: 0.9rem; }
+.pub-nav a { color: var(--link); text-decoration: none; }
+.pub-nav a:hover { color: var(--accent); }
+.pub-nav .sep { color: var(--muted); margin: 0 7px; }
+.pub-intro { font-size: 0.9rem; color: var(--muted); margin: 0 0 12px; }
+.pub-intro a { color: var(--link); }
+
+/* site nav: pinned top right, next to the theme toggle */
+.site-nav {
+  position: fixed; top: 14px; right: 24px; z-index: 10;
+  height: 38px; padding: 0;
+  font-size: 0.88rem; line-height: 1;
+  display: flex; align-items: center; gap: 8px;
+}
+.site-nav a { color: var(--muted); text-decoration: none; padding: 3px 0; border-bottom: 1.5px solid transparent; transition: color .12s ease, border-color .12s ease; }
+.site-nav a:hover { color: var(--accent); }
+.site-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
+.site-nav .dot { color: var(--muted); }
+@media (max-width: 640px) {
+  #cv { margin-top: 70px; }
+}
+@media print { .site-nav { display: none; } }
+/* toggle sits inline in the nav, no circle */
+.site-nav .theme-toggle {
+  position: static; width: auto; height: auto; padding: 3px 0;
+  background: none; border: 0; box-shadow: none; border-radius: 0;
+  color: var(--muted); display: inline-flex; align-items: center;
+}
+.site-nav .theme-toggle:hover { color: var(--accent); }
+.site-nav .theme-toggle svg { width: 15px; height: 15px; }
+
+/* clearer filter chips */
+:root { --chip-bd: #d6d4d0; }
+:root[data-theme="dark"] { --chip-bd: #3b3e45; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --chip-bd: #3b3e45; } }
+.paper-tab { color: var(--ink-soft); border-color: var(--chip-bd); font-size: 0.82rem; letter-spacing: 0.005em; }
+.paper-tab:hover { color: var(--accent); border-color: var(--accent); }
+.paper-tab.active { color: #fff; background: var(--accent); border-color: var(--accent); }
+.paper-tab { min-height: 28px; padding: 5px 13px; }
+.paper-tabs { gap: 7px; }
+@media (max-width: 640px) { .paper-tab { min-height: 32px; padding: 7px 14px; } }
+
+/* keep layout steady when the page gets shorter (no scrollbar jump) */
+html { overflow-y: scroll; scrollbar-gutter: stable; }
+
+/* ================= v3: quiet style ================= */
+/* two tones + a thin coral line; no blue, no boxes */
+:root { --link: var(--ink); --link-line: rgba(0,0,0,.22); }
+:root[data-theme="dark"] { --link: var(--ink); --link-line: rgba(255,255,255,.25); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --link: var(--ink); --link-line: rgba(255,255,255,.25); } }
+
+a { text-decoration: underline; text-decoration-color: var(--link-line); text-decoration-thickness: 1px; text-underline-offset: 3px; transition: color .12s ease, text-decoration-color .12s ease; }
+a:hover { color: var(--accent) !important; text-decoration-color: var(--accent); }
+.site-nav a, .talk-thumb, #contactDetails .contact-links a, .all-pubs-link a { text-decoration: none; }
+#contactDetails .contact-links a { color: var(--ink-soft); }
+.contact-links .sep, .sep, .dot { color: var(--muted); }
+.all-pubs-link a { color: var(--ink-soft); }
+
+/* section titles: ink, with a short coral underline like the active nav item */
+.sectionTitle h1 {
+  display: block; color: var(--ink); font-weight: 400; font-size: 1.35em;
+  padding-bottom: 0; border-bottom: 0;
+}
+
+/* research cards: plain text columns */
+.intro-cards { gap: 30px; margin: 14px 0 6px; }
+.intro-card { background: none; border: 0; border-radius: 0; padding: 0; }
+.intro-card-title { color: var(--ink); }
+
+/* badges become quiet gray text */
+.sectionContent h6, .sectionContent h6.badge-green {
+  background: none; border: 0; padding: 0; margin-left: 2px;
+  color: var(--muted); font-weight: 400; font-size: 0.85rem; -webkit-text-stroke: 0;
+}
+.vb-featured, .icon-vb, .icon-badge, .badge-green .icon-badge { color: var(--muted); font-weight: 400; }
+
+.vb-featured a + a h6::before { content: "\00b7"; margin-right: 6px; color: var(--muted); }
+/* talk captions: plain, not italic */
+.talk-caption, .talk-caption em { font-style: normal; }
+
+/* publication filters: a text row like the nav */
+.paper-tabs { gap: 6px 20px; align-items: center; margin: 6px 0 18px; }
+.paper-tab, .paper-tab:hover, .paper-tab.active {
+  background: none !important; border: 0; border-radius: 0; box-shadow: none;
+  min-height: 0; padding: 3px 0; font-size: 0.9rem;
+  border-bottom: 1.5px solid transparent;
+}
+.paper-tab { color: var(--muted); }
+.paper-tab:hover { color: var(--accent); }
+.paper-tab.active { color: var(--ink) !important; border-bottom-color: var(--accent); }
+@media (max-width: 640px) { .paper-tab { min-height: 0; padding: 5px 0; } }
+
+/* paper link rows: no underline at rest, coral underline on hover */
+.paper-entry a { text-decoration: none; }
+.paper-entry a:hover { text-decoration: none; }
+
+/* paper entries: three clear levels (title / why / authors) in both themes */
+:root { --p-title: #111; --p-why: #4a4a4a; --p-auth: #8c8c8c; --p-meta: #6a6a6a; }
+:root[data-theme="dark"] { --p-title: var(--ink); --p-why: var(--ink-soft); --p-auth: var(--muted); --p-meta: var(--paper-ink); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --p-title: var(--ink); --p-why: var(--ink-soft); --p-auth: var(--muted); --p-meta: var(--paper-ink); } }
+.paper-entry { color: var(--p-meta); }
+.paper-entry h3 { color: var(--p-title); }
+.paper-entry .why { color: var(--p-why); }
+.paper-entry .authors { color: var(--p-auth); }
+
+/* title line: level in near-black, org in gray */
+.tagline { font-size: 1rem; }
+.tagline .role { color: var(--ink); font-style: normal; }
+
+/* recognition (awards, orals, press) stands out in the accent color, no boxes */
+.paper-entry h6, .paper-entry h6.badge-green {
+  color: var(--accent) !important; font-weight: 700; font-size: 0.86rem; -webkit-text-stroke: 0;
+}
+.paper-entry .vb-featured { color: var(--accent); font-weight: 600; }
+.paper-entry .icon-badge, .paper-entry .icon-vb, .paper-entry .badge-green .icon-badge { color: var(--accent); }
+.paper-entry .vb-featured a + a h6::before { color: var(--accent); }
+
+/* editorial recognition: awards in small capitals (accent), press in quiet italic */
+.paper-entry .award, .paper-entry a.award {
+  font-size: inherit; font-weight: 600; letter-spacing: 0; text-transform: none;
+  color: var(--accent) !important; text-decoration: none;
+}
+.paper-entry a.award:hover { color: var(--ink) !important; }
+.paper-entry .press { font-style: normal; color: var(--ink); }
+.paper-entry .press-label { font-weight: 600; color: var(--ink); margin-right: 2px; }
+.paper-entry .press-label::after { content: ":"; }
+.paper-entry .press a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--link-line); text-underline-offset: 3px; }
+.paper-entry .press a:hover { color: var(--accent) !important; }
+
+/* recognition on its own italic line, like "Winner of ..." in print */
+.paper-entry .honor { display: inline; font-style: italic; color: var(--ink); }
+.paper-entry .honor a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--link-line); text-underline-offset: 3px; }
+.paper-entry .honor a:hover { color: var(--accent) !important; }
+
+
+/* recognition line in antique gold */
+:root { --honor: #6A4F12; }
+:root[data-theme="dark"] { --honor: #D4B26A; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --honor: #D4B26A; } }
+.paper-entry .honor, .paper-entry .honor a { color: var(--honor) !important; }
+.paper-entry .honor a { text-decoration-color: color-mix(in srgb, var(--honor) 35%, transparent); }
+.paper-entry .honor a:hover { text-decoration-color: var(--honor); }
+
+
+/* light mode: warm paper background, stronger text (dark mode unchanged) */
+:root:not([data-theme="dark"]) {
+  --bg: #F7F5F0; --card: #FFFDF8; --rule: #E4E0D6;
+  --ink: #1C1C1C; --ink-soft: #222222; --muted: #6E6A63;
+  --p-title: #111; --p-why: #333; --p-auth: #7A766F; --p-meta: #555;
+  --link-line: rgba(0,0,0,.25); --agenda-line: #CFCABF;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15161a; --card: #1d1f24; --rule: #2c2e34;
+    --ink: #ececec; --ink-soft: #cfcfcf; --muted: #9a9a9a;
+    --p-title: var(--ink); --p-why: var(--ink-soft); --p-auth: var(--muted); --p-meta: var(--paper-ink);
+    --link-line: rgba(255,255,255,.25); --agenda-line: #44474e;
+  }
+}
+body { background: var(--bg); }
+
+/* filter tabs: clearly clickable text options */
+.paper-tab { color: #4a4845 !important; border-bottom: 1.5px solid var(--rule) !important; cursor: pointer; }
+.paper-tab:hover { color: var(--accent) !important; border-bottom-color: var(--accent) !important; }
+.paper-tab.active { color: var(--ink) !important; border-bottom-color: var(--accent) !important; font-weight: 600; }
+:root[data-theme="dark"] .paper-tab:not(.active):not(:hover) { color: #c4c4c4 !important; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .paper-tab:not(.active):not(:hover) { color: #c4c4c4 !important; } }
+</style>
+<script>
+  // Apply a saved theme choice before the page paints (no flash).
+  (function () {
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body id="top">
+
+<nav class="site-nav" aria-label="Site">
+	<a href="index.html">Home</a><span class="dot" aria-hidden="true">&middot;</span><a aria-current="page" href="publications.html">Publications</a><span class="dot" aria-hidden="true">&middot;</span><button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Toggle light / dark">
+	<svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+	<svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+</button>
+</nav>
+<div id="cv">
+	<div class="mainDetails">
+		<div id="headshot">
+			<img src="assets/profile/me3.JPG" alt="Chen-Yu Lee" />
+		</div>
+
+		<div id="name">
+			<h1>Chen-Yu Lee</h1>
+			<div class="tagline"><span class="role">Principal Scientist &amp; Director</span>, Google Cloud AI Research</div>
+			<div id="contactDetails">
+				<ul>
+					<li class="contact-links">
+						<a href="https://scholar.google.com/citations?user=uWPUSEgAAAAJ&hl=en"><span>Scholar</span></a>
+						<span class="sep" aria-hidden="true">&middot;</span>
+						<a href="https://www.linkedin.com/in/chenyulee260"><span>LinkedIn</span></a>
+						<span class="sep" aria-hidden="true">&middot;</span>
+						<a href="mailto:chenyulee260@gmail.com"><span>Email</span></a>
+						<!-- TODO: optionally add GitHub -->
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="mainArea">
+		<section class="papers-section">
+			<div class="sectionTitle">
+				<h1>Publications</h1>
+			</div>
+			<p class="pub-intro">A selection of my papers, filterable by topic. For the complete list, see <a href="https://scholar.google.com/citations?user=uWPUSEgAAAAJ&hl=en">Google Scholar</a>.</p>
+
+				<div class="paper-tabs" role="tablist" aria-label="Filter papers by topic">
+				<button class="paper-tab active" data-filter="all" type="button">All</button>
+				<button class="paper-tab" data-filter="agents" type="button">Agents &amp; Harness</button>
+				<button class="paper-tab" data-filter="reasoning" type="button">Reasoning &amp; Post-Training</button>
+				<button class="paper-tab" data-filter="continual" type="button">Continual &amp; Multi-Task Learning</button>
+				<button class="paper-tab" data-filter="classic" type="button">Foundational</button>
+				<button class="paper-tab" data-filter="document" type="button">Structured Data Intelligence</button>
+				<button class="paper-tab" data-filter="multimodal" type="button">Multimodal</button>
+			</div>
+
+			<div class="sectionContent">
+
+<div class="paper-entry" data-category="agents">
+				<h3 data-category="agents">RRSI: Regularized Recursive Self-Improvement of Agent Harnesses</h3>
+				Peng Xia, Rujun Han, Zifeng Wang, Yanfei Chen, Yufan Zhang, Yoonho Lee, Chengsong Huang, Han Yu, Zhongying CuiZhu, Yifei Ming, Huaxiu Yao, Burak Gokturk, Tomas Pfister, <span class="author-self">Chen-Yu Lee</span><br>
+				<b><a href="https://arxiv.org/">arXiv 2026</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2609.24972">Paper</a> <span class="sep">&middot;</span> <a href="https://regularized-rsi.com/">Project Page</a> <span class="sep">&middot;</span> <a href="https://github.com/google-research/rrsi">Code</a>
+				</div>
+
+				<div class="paper-entry" data-category="agents">
+				<h3 data-category="agents">EnvHarness: Awakening Static Worlds for Agent Learning</h3>
+				Chengsong Huang, Zifeng Wang, Rujun Han, Jun Yan, Yanfei Chen, Zoey CuiZhu, Ke Jiang, Peng Xia, Han Yu, Yufan Zhuang, Yifei Ming, Jiaqi Pan, Bhavana Dalvi Mishra, Jiaxin Huang, Burak Gokturk, Tomas Pfister, <span class="author-self">Chen-Yu Lee</span><br>
+				<b><a href="https://arxiv.org/">arXiv 2026</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2608.19880">Paper</a> <span class="sep">&middot;</span> <a href="https://envharness.com/">Project Page</a> <span class="sep">&middot;</span> <a href="https://github.com/google-research/envharness">Code</a>
+				</div>
+
+				<div class="paper-entry" data-category="agents">
+				<h3 data-category="agents">SkillOS: Learning Skill Curation for Self-Evolving Agents</h3>
+				Siru Ouyang, Jun Yan, Yanfei Chen, Rujun Han, Zifeng Wang, Bhavana Dalvi Mishra, Rui Meng, Chun-Liang Li, Yizhu Jiao, Kaiwen Zha, Maohao Shen, Vishy Tirumalashetty, George Lee, Jiawei Han, Tomas Pfister, <span class="author-self">Chen-Yu Lee</span><br>
+				<b><a href="https://neurips.cc/Conferences/2026">NeurIPS 2026</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2605.06614">Paper</a>
+				</div>
+
+				<div class="paper-entry" data-category="agents">
+				<h3 data-category="agents">FinanceHarness: Autonomous Financial Deep Research Framework</h3>
+				Yijia Xiao, Rujun Han, Yanfei Chen, Zifeng Wang, Ke Jiang, Zhongying CuiZhu, Vishy Tirumalashetty, Wei Wang, Burak Gokturk, Tomas Pfister, <span class="author-self">Chen-Yu Lee</span><br>
+				<b><a href="https://2026.emnlp.org/">EMNLP 2026</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2607.27853">Paper</a> (Findings) <span class="sep">&middot;</span> <a href="https://financegym.github.io/">FinanceGym Leaderboard</a>
+				</div>
+
+				<div class="paper-entry" data-category="classic">
+				<h3 data-category="classic">Gemma 4 Technical Report</h3>
+				Gemini Team, Google <span class="role">(contributor)</span><br>
+				<b><a href="https://arxiv.org/">arXiv 2026</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2607.02770">Paper</a>
+				</div>
+
+				<div class="paper-entry" data-category="agents">
+				<h3 data-category="agents">Budget-Aware Tool-Use Enables Effective Agent Scaling</h3>
+				Tengxiao Liu, Zifeng Wang, Jin Miao, I-Hung Hsu, Jun Yan, Jiefeng Chen, Rujun Han, Fangyuan Xu, Yanfei Chen, Ke Jiang, Samira Daruki, Yi Liang, William Yang Wang, Tomas Pfister, <span class="author-self">Chen-Yu Lee</span><br>
+				<b><a href="https://colmweb.org/">COLM 2026</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2511.17006">Paper</a> <span class="sep">&middot;</span> <a href="https://github.com/google-research/budget-aware-agent">Code</a> <span class="sep">&middot;</span> <span class="honor">Featured in <a href="https://venturebeat.com/ai/googles-new-framework-helps-ai-agents-spend-their-compute-and-tool-budget">VentureBeat</a></span>
+				</div>
+
+				<div class="paper-entry" data-category="agents">
+				<h3 data-category="agents">When One LLM Drools, Multi-LLM Collaboration Rules</h3>
+				Shangbin Feng, Wenxuan Ding, Alisa Liu, Zifeng Wang, Weijia Shi, Yike Wang, Zejiang Shen, Xiaochuang Han, Hunter Lang, <span class="author-self">Chen-Yu Lee</span>, Tomas Pfister, Yejin Choi, Yulia Tsvetkov<br>
+				<b><a href="https://2026.aclweb.org/">ACL 2026</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2502.04506">Paper</a>
+				</div>
+
+				<div class="paper-entry" data-category="agents">
+				<h3 data-category="agents">ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory</h3>
+				Siru Ouyang, Jun Yan, I-Hung Hsu, Yanfei Chen, Ke Jiang, Zifeng Wang, Rujun Han, Long T. Le, Samira Daruki, Xiangru Tang, Vishy Tirumalashetty, George Lee, Mahsan Rofouei, Hangfei Lin, Jiawei Han, <span class="author-self">Chen-Yu Lee</span>, Tomas Pfister<br>
+				<b><a href="https://iclr.cc/Conferences/2026">ICLR 2026</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2509.25140">Paper</a> <span class="sep">&middot;</span> <a href="https://github.com/google-research/reasoning-bank">Code</a> <span class="sep">&middot;</span> <a href="https://research.google/blog/reasoningbank-enabling-agents-to-learn-from-experience/">Google AI Blog</a> <span class="sep">&middot;</span> <span class="honor">Featured in <a href="https://venturebeat.com/ai/new-memory-framework-builds-ai-agents-that-can-handle-the-real-worlds">VentureBeat</a> and <a href="https://youtu.be/36OBX5lQjGc?si=FRcq689g61y5sXyX&t=224">Andrej Karpathy's interview</a></span>
+				</div>
+
+				<div class="paper-entry" data-category="reasoning">
+				<h3 data-category="reasoning">Supervised Reinforcement Learning: From Expert Trajectories to Step-wise Reasoning</h3>
+				Yihe Deng, I-Hung Hsu, Jun Yan, Zifeng Wang, Rujun Han, Gufeng Zhang, Yanfei Chen, Wei Wang, Tomas Pfister, <span class="author-self">Chen-Yu Lee</span><br>
+				<b><a href="https://iclr.cc/Conferences/2026">ICLR 2026</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2510.25992">Paper</a> <span class="sep">&middot;</span> <span class="honor">Featured in <a href="https://venturebeat.com/ai/googles-new-ai-training-method-helps-small-models-tackle-complex-reasoning">VentureBeat</a></span>
+				</div>
+
+				<div class="paper-entry" data-category="reasoning">
+				<h3 data-category="reasoning">Universal Model Routing for Efficient LLM Inference</h3>
+				Wittawat Jitkrittum, Harikrishna Narasimhan, Ankit Singh Rawat, Jeevesh Juneja, Zifeng Wang, <span class="author-self">Chen-Yu Lee</span>, Pradeep Shenoy, Rina Panigrahy, Aditya Krishna Menon, Sanjiv Kumar<br>
+				<b><a href="https://iclr.cc/Conferences/2026">ICLR 2026</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2502.08773">Paper</a>
+				</div>
+
+				<div class="paper-entry" data-category="reasoning">
+				<h3 data-category="reasoning">ATLAS: Adaptive Transfer Scaling Laws for Multilingual Pretraining, Finetuning, and Decoding the Curse of Multilinguality</h3>
+				Shayne Longpre, Sneha Kudugunta, Niklas Muennighoff, I-Hung Hsu, Isaac Caswell, Alex Pentland, Sercan Arik, <span class="author-self">Chen-Yu Lee</span>, Sayna Ebrahimi<br>
+				<b><a href="https://iclr.cc/Conferences/2026">ICLR 2026</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2510.22037">Paper</a>
+				</div>
+
+				<div class="paper-entry" data-category="agents">
+				<h3 data-category="agents">Deep Researcher with Test-Time Diffusion</h3>
+				Rujun Han, Yanfei Chen, Zoey CuiZhu, Lesly Miculicich, Guan Sun, Yuanjun Bi, Weiming Wen, Hui Wan, Chunfeng Wen, Solène Maître, George Lee, Vishy Tirumalashetty, Emily Xue, Zizhao Zhang, Salem Haykal, Burak Gokturk, Tomas Pfister, <span class="author-self">Chen-Yu Lee</span><br>
+				<b><a href="https://arxiv.org/">arXiv 2025</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2507.16075">Paper</a> <span class="sep">&middot;</span> <a href="https://research.google/blog/deep-researcher-with-test-time-diffusion/">Google AI Blog</a> <span class="sep">&middot;</span> <span class="honor">Featured in <a href="https://venturebeat.com/ai/googles-new-diffusion-ai-agent-mimics-human-writing-to-improve-enterprise-research">VentureBeat</a></span>
+				</div>
+
+				<div class="paper-entry" data-category="classic">
+				<h3 data-category="classic">Gemini 2.5: Pushing the Frontier with Advanced Reasoning, Multimodality, Long Context, and Next Generation Agentic Capabilities</h3>
+				Gemini Team, Google <span class="role">(contributor)</span><br>
+				<b><a href="https://arxiv.org/">arXiv 2025</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2507.06261">Paper</a>
+				</div>
+
+				<div class="paper-entry" data-category="agents">
+				<h3 data-category="agents">Heterogeneous Swarms: Jointly Optimizing Model Roles and Weights for Multi-LLM Systems</h3>
+				Shangbin Feng, Zifeng Wang, Palash Goyal, Yike Wang, Weijia Shi, Huang Xia, Hamid Palangi, Luke Zettlemoyer, Yulia Tsvetkov, <span class="author-self">Chen-Yu Lee</span>, Tomas Pfister<br>
+				<b><a href="https://neurips.cc/Conferences/2025">NeurIPS 2025</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2502.04510">Paper</a>
+				</div>
+
+				<div class="paper-entry" data-category="reasoning">
+				<h3 data-category="reasoning">Towards Compute-Optimal Many-Shot In-Context Learning</h3>
+				Shahriar Golchin, Yanfei Chen, Rujun Han, Manan Gandhi, Tianli Yu, Swaroop Mishra, Mihai Surdeanu, Rishabh Agarwal, <span class="author-self">Chen-Yu Lee</span>, Tomas Pfister<br>
+				<b><a href="https://colmweb.org/2025/">COLM 2025</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2507.16217">Paper</a>
+				</div>
+
+				<div class="paper-entry" data-category="agents">
+				<h3 data-category="agents">In Prospect and Retrospect: Reflective Memory Management for Long-term Personalized Dialogue Agents</h3>
+				Zhen Tan, Jun Yan, I-Hung Hsu, Rujun Han, Zifeng Wang, Long T. Le, Yiwen Song, Yanfei Chen, Hamid Palangi, George Lee, Anand Iyer, Tianlong Chen, Huan Liu, <span class="author-self">Chen-Yu Lee</span>, Tomas Pfister<br>
+				<b><a href="https://2025.aclweb.org/">ACL 2025</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2503.08026">Paper</a>
+				</div>
+
+				<div class="paper-entry" data-category="agents">
+				<h3 data-category="agents">Model Swarms: Collaborative Search to Adapt LLM Experts via Swarm Intelligence</h3>
+				Shangbin Feng, Zifeng Wang, Yike Wang, Sayna Ebrahimi, Hamid Palangi, Lesly Miculicich, Achin Kulshrestha, Nathalie Rauschmayr, Yejin Choi, Yulia Tsvetkov, <span class="author-self">Chen-Yu Lee</span>, Tomas Pfister<br>
+				<b><a href="https://icml.cc/Conferences/2025">ICML 2025</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2410.11163">Paper</a>
+				</div>
+
+				<div class="paper-entry" data-category="reasoning">
+				<h3 data-category="reasoning">Speculative Knowledge Distillation: Bridging the Teacher-Student Gap Through Interleaved Sampling</h3>
+				Wenda Xu, Rujun Han, Zifeng Wang, Long T. Le, Dhruv Madeka, Lei Li, William Yang Wang, Rishabh Agarwal, <span class="author-self">Chen-Yu Lee</span>, Tomas Pfister<br>
+				<b><a href="https://iclr.cc/Conferences/2025">ICLR 2025</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2410.11325">Paper</a> <span class="sep">&middot;</span> <a href="https://github.com/google-research/google-research/tree/master/speculative_kd">Code</a>
+				</div>
+
+				<div class="paper-entry" data-category="reasoning">
+				<h3 data-category="reasoning">Speculative RAG: Enhancing Retrieval Augmented Generation through Drafting</h3>
+				Zilong Wang, Zifeng Wang, Long Le, Huaixiu Steven Zheng, Swaroop Mishra, Vincent Perot, Yuwei Zhang, Anush Mattapalli, Ankur Taly, Jingbo Shang, <span class="author-self">Chen-Yu Lee</span>, Tomas Pfister<br>
+				<b><a href="https://iclr.cc/Conferences/2025">ICLR 2025</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2407.08223">Paper</a> <span class="sep">&middot;</span> <a href="https://research.google/blog/speculative-rag-enhancing-retrieval-augmented-generation-through-drafting/">Google AI Blog</a>
+				</div>
+
+				<div class="paper-entry" data-category="reasoning">
+				<h3 data-category="reasoning">Reverse Thinking Makes LLMs Stronger Reasoners</h3>
+				Justin Chih-Yao Chen, Zifeng Wang, Hamid Palangi, Rujun Han, Sayna Ebrahimi, Long Le, Vincent Perot, Swaroop Mishra, Mohit Bansal, <span class="author-self">Chen-Yu Lee</span>, Tomas Pfister<br>
+				<b><a href="https://2025.naacl.org/">NAACL 2025</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/abs/2411.19865">Paper</a> <span class="sep">&middot;</span> <a href="https://github.com/google-research/google-research/tree/master/RevThink">Code</a>
+				</div>
+
+				<div class="paper-entry" data-category="reasoning">
+				<h3 data-category="reasoning">Where is the answer? An empirical study of positional bias for parametric knowledge extraction in language model</h3>
+				Kuniaki Saito, <span class="author-self">Chen-Yu Lee</span>, Kihyuk Sohn, Yoshitaka Ushiku<br>
+				<b><a href="https://2025.naacl.org/">NAACL 2025</a></b> <span class="sep">&middot;</span> <a href="https://aclanthology.org/2025.naacl-long.58.pdf">Paper</a> <span class="sep">&middot;</span> <span class="honor">Oral Presentation</span>
+				</div>
+
+				<div class="paper-entry" data-category="document">
+				<h3 data-category="document">TableRAG: Million-Token Tabular Reasoning with Large Language Models</h3>
+				Si-An Chen, Lesly Miculicich, Julian Martin Eisenschlos, Zifeng Wang, Zilong Wang, Yanfei Chen, Yasuhisa Fujii, Hsuan-Tien Lin, <span class="author-self">Chen-Yu Lee</span>, Tomas Pfister<br>
+				<b><a href="https://neurips.cc/Conferences/2024">NeurIPS 2024</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2410.04739">Paper</a> <span class="sep">&middot;</span> <a href="https://github.com/google-research/google-research/tree/master/table_rag">Code</a>
+				</div>
+
+				<div class="paper-entry" data-category="agents">
+				<h3 data-category="agents">Re-Invoke: Tool Invocation Rewriting for Zero-Shot Tool Retrieval</h3>
+				Yanfei Chen, Jinsung Yoon, Devendra Singh Sachan, Qingze Wang, Vincent Cohen-Addad, Mohammadhossein Bateni, <span class="author-self">Chen-Yu Lee</span>, Tomas Pfister<br>
+				<b><a href="https://2024.emnlp.org/">EMNLP 2024</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2408.01875">Paper</a> (Findings) <span class="sep">&middot;</span> <a href="https://research.google/blog/re-invoke-tool-invocation-rewriting-for-zero-shot-tool-retrieval/">Google AI Blog</a>
+				</div>
+
+				<div class="paper-entry" data-category="reasoning">
+				<h3 data-category="reasoning">CaLM: Contrasting Large and Small Language Models to Verify Grounded Generation</h3>
+				I-Hung Hsu, Zifeng Wang, Long T. Le, Lesly Miculicich, Nanyun Peng, <span class="author-self">Chen-Yu Lee</span>, Tomas Pfister<br>
+				<b><a href="https://2024.aclweb.org/">ACL 2024</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2406.05365">Paper</a> (Findings)
+				</div>
+
+				<div class="paper-entry" data-category="reasoning">
+				<h3 data-category="reasoning">Found in the Middle: Calibrating Positional Attention Bias Improves Long Context Utilization</h3>
+				Cheng-Yu Hsieh, Yung-Sung Chuang, Chun-Liang Li, Zifeng Wang, Long Le, Abhishek Kumar, James R. Glass, Alexander Ratner, <span class="author-self">Chen-Yu Lee</span>, Ranjay Krishna, Tomas Pfister<br>
+				<b><a href="https://2024.aclweb.org/">ACL 2024</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2406.16008">Paper</a> (Findings) <span class="sep">&middot;</span> <span class="honor">Featured in <a href="https://www.alpha-matica.com/post/navigating-the-evolving-total-cost-of-ownership-tco-of-genai-in-late-2025">Alpha Matica</a></span>
+				</div>
+
+				<div class="paper-entry" data-category="document">
+				<h3 data-category="document">LMDX: Language Model-based Document Information Extraction and Localization</h3>
+				Vincent Perot, Kai Kang, Florian Luisier, Guolong Su, Xiaoyu Sun, Ramya Sree Boppana, Zilong Wang, Zifeng Wang, Jiaqi Mu, Hao Zhang, <span class="author-self">Chen-Yu Lee</span>, Nan Hua<br>
+				<b><a href="https://2024.aclweb.org/">ACL 2024</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2309.10952">Paper</a> (Findings)
+				</div>
+
+				<div class="paper-entry" data-category="reasoning">
+				<h3 data-category="reasoning">CodecLM: Aligning Language Models with Tailored Synthetic Data</h3>
+				Zifeng Wang, Chun-Liang Li, Vincent Perot, Long T. Le, Jin Miao, Zizhao Zhang, <span class="author-self">Chen-Yu Lee</span>, Tomas Pfister<br>
+				<b><a href="https://2024.naacl.org">NAACL 2024</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2404.05875.pdf">Paper</a> (Findings) <span class="sep">&middot;</span> <a href="https://research.google/blog/codeclm-aligning-language-models-with-tailored-synthetic-data/">Google AI Blog</a>
+				</div>
+
+				<div class="paper-entry" data-category="document">
+				<h3 data-category="document">Chain-of-Table: Evolving Tables in the Reasoning Chain for Table Understanding</h3>
+				Zilong Wang, Hao Zhang, Chun-Liang Li, Julian Martin Eisenschlos, Vincent Perot, Zifeng Wang, Lesly Miculicich, Yasuhisa Fujii, Jingbo Shang, <span class="author-self">Chen-Yu Lee</span>, Tomas Pfister<br>
+				<b><a href="https://iclr.cc/Conferences/2024">ICLR 2024</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2401.04398.pdf">Paper</a> <span class="sep">&middot;</span> <a href="https://github.com/google-research/chain-of-table">Code</a> <span class="sep">&middot;</span> <a href="https://blog.research.google/2024/03/chain-of-table-evolving-tables-in.html">Google AI Blog</a>
+				</div>
+
+				<div class="paper-entry" data-category="agents">
+				<h3 data-category="agents">Tool Documentation Enables Zero-Shot Tool-Usage with Large Language Models</h3>
+				Cheng-Yu Hsieh, Si-An Chen, Chun-Liang Li, Yasuhisa Fujii, Alexander Ratner, <span class="author-self">Chen-Yu Lee</span>, Ranjay Krishna, Tomas Pfister<br>
+				<b><a href="https://arxiv.org/">arXiv 2023</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2308.00675.pdf">Paper</a>
+				</div>
+
+				<div class="paper-entry" data-category="reasoning">
+				<h3 data-category="reasoning">Distilling Step-by-Step! Outperforming Larger Language Models with Less Training Data and Smaller Model Sizes</h3>
+				Cheng-Yu Hsieh, Chun-Liang Li, Chih-Kuan Yeh, Hootan Nakhost, Yasuhisa Fujii, Alexander Ratner, Ranjay Krishna, <span class="author-self">Chen-Yu Lee</span>, Tomas Pfister<br>
+				<b><a href="https://2023.aclweb.org/">ACL 2023</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2305.02301.pdf">Paper</a> (Findings) <span class="sep">&middot;</span> <a href="https://github.com/google-research/distilling-step-by-step">Code</a> <span class="sep">&middot;</span> <a href="https://blog.research.google/2023/09/distilling-step-by-step-outperforming.html">Google AI Blog</a> <span class="sep">&middot;</span> <span class="honor"><a href="https://blog.research.google/2023/07/google-at-acl-2023.html">Google ACL 2023 Spotlight</a></span>
+				</div>
+
+				<div class="paper-entry" data-category="document">
+				<h3 data-category="document">QueryForm: A Simple Zero-shot Form Entity Query Framework</h3>
+				Zifeng Wang, Zizhao Zhang, Jacob Devlin, <span class="author-self">Chen-Yu Lee</span>, Guolong Su, Hao Zhang, Jennifer Dy, Vincent Perot, Tomas Pfister<br>
+				<b><a href="https://2023.aclweb.org/">ACL 2023</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2211.07730.pdf">Paper</a> (Findings)
+				</div>
+
+				<div class="paper-entry" data-category="document">
+				<h3 data-category="document">FormNetV2: Multimodal Graph Contrastive Learning for Form Document Information Extraction</h3>
+				<span class="author-self">Chen-Yu Lee</span>, Chun-Liang Li, Hao Zhang, Timothy Dozat, Vincent Perot, Guolong Su, Xiang Zhang, Kihyuk Sohn, Nikolai Glushnev, Renshen Wang, Joshua Ainslie, Shangbang Long, Siyang Qin, Yasuhisa Fujii, Nan Hua, Tomas Pfister<br>
+				<b><a href="https://2023.aclweb.org/">ACL 2023</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2305.02549.pdf">Paper</a>
+				</div>
+
+				<div class="paper-entry" data-category="document">
+				<h3 data-category="document">VRDU: A Benchmark for Visually-rich Document Understanding</h3>
+				Zilong Wang, Yichao Zhou, Wei Wei, <span class="author-self">Chen-Yu Lee</span>, Sandeep Tata<br>
+				<b><a href="https://kdd.org/kdd2023/">KDD 2023</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2211.15421.pdf">Paper</a>  <span class="sep">&middot;</span> <a href="https://github.com/google-research/google-research/tree/master/vrdu">Code</a>  <span class="sep">&middot;</span> <a href="https://github.com/google-research-datasets/vrdu">Dataset</a>
+				</div>
+
+				<div class="paper-entry" data-category="multimodal">
+				<h3 data-category="multimodal">Multimodal Prompting with Missing Modalities for Visual Recognition</h3>
+				Yi-Lun Lee, Yi-Hsuan Tsai, Wei-Chen Chiu, <span class="author-self">Chen-Yu Lee</span><br>
+				<b><a href="https://cvpr2023.thecvf.com/">CVPR 2023</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2303.03369.pdf">Paper</a> <span class="sep">&middot;</span> <a href="https://github.com/YiLunLee/Missing_aware_prompts">Code</a>
+				</div>
+
+				<div class="paper-entry" data-category="multimodal">
+				<h3 data-category="multimodal">Pic2Word: Mapping Pictures to Words for Zero-shot Composed Image Retrieval</h3>
+				Kuniaki Saito, Kihyuk Sohn, Xiang Zhang, Chun-Liang Li, <span class="author-self">Chen-Yu Lee</span>, Kate Saenko, Tomas Pfister<br>
+				<b><a href="https://cvpr2023.thecvf.com/">CVPR 2023</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2302.03084.pdf">Paper</a> <span class="sep">&middot;</span> <a href="https://github.com/google-research/composed_image_retrieval">Code</a>  <span class="sep">&middot;</span> <a href="https://blog.research.google/2023/07/pic2word-mapping-pictures-to-words-for.html">Google AI Blog</a>
+				</div>
+
+				<div class="paper-entry" data-category="multimodal">
+				<h3 data-category="multimodal">Prefix Conditioning Unifies Language and Label Supervision</h3>
+				Kuniaki Saito, Kihyuk Sohn, Xiang Zhang, Chun-Liang Li, <span class="author-self">Chen-Yu Lee</span>, Kate Saenko, Tomas Pfister<br>
+				<b><a href="https://cvpr2023.thecvf.com/">CVPR 2023</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2206.01125.pdf">Paper</a>  <span class="sep">&middot;</span> <a href="https://blog.research.google/2023/06/unifying-image-caption-and-image.html">Google AI Blog</a>
+				</div>
+
+				<div class="paper-entry" data-category="continual">
+				<h3 data-category="continual">DualPrompt: Complementary Prompting for Rehearsal-free Continual Learning</h3>
+				Zifeng Wang, Zizhao Zhang, Sayna Ebrahimi, Ruoxi Sun, Han Zhang, <span class="author-self">Chen-Yu Lee</span>, Xiaoqi Ren, Guolong Su, Vincent Perot, Jennifer Dy, Tomas Pfister<br>
+				<b><a href="https://eccv2022.ecva.net/">ECCV 2022</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2204.04799.pdf">Paper</a> <span class="sep">&middot;</span> <a href="https://github.com/google-research/l2p">Code</a>
+				</div>
+
+				<div class="paper-entry" data-category="document">
+				<h3 data-category="document">FormNet: Structural Encoding beyond Sequential Modeling in Form Document Information Extraction</h3>
+				<span class="author-self">Chen-Yu Lee</span>, Chun-Liang Li, Timothy Dozat, Vincent Perot, Guolong Su, Nan Hua, Joshua Ainslie, Renshen Wang, Yasuhisa Fujii, Tomas Pfister<br>
+				<b><a href="https://www.2022.aclweb.org/">ACL 2022</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2203.08411.pdf">Paper</a> <span class="sep">&middot;</span> <a href="https://ai.googleblog.com/2022/04/formnet-beyond-sequential-modeling-for.html">Google AI Blog</a>
+				</div>
+
+				<div class="paper-entry" data-category="continual">
+				<h3 data-category="continual">Learning to Prompt for Continual Learning</h3>
+				Zifeng Wang, Zizhao Zhang, <span class="author-self">Chen-Yu Lee</span>, Han Zhang, Ruoxi Sun, Xiaoqi Ren, Guolong Su, Vincent Perot, Jennifer Dy, Tomas Pfister<br>
+				<b><a href="https://cvpr2022.thecvf.com/">CVPR 2022</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2112.08654.pdf">Paper</a> <span class="sep">&middot;</span> <a href="https://github.com/google-research/l2p">Code</a> <span class="sep">&middot;</span> <a href="https://ai.googleblog.com/2022/04/learning-to-prompt-for-continual.html">Google AI Blog</a>
+				</div>
+
+				<div class="paper-entry" data-category="document">
+				<h3 data-category="document">ROPE: Reading Order Equivariant Positional Encoding for Graph-based Document Information Extraction</h3>
+				<span class="author-self">Chen-Yu Lee</span>, Chun-Liang Li, Chu Wang, Renshen Wang, Yasuhisa Fujii, Siyang Qin, Ashok Popat, Tomas Pfister<br>
+				<b><a href="https://aclanthology.org/events/acl-2021/">ACL 2021</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2106.10786.pdf">Paper</a> <span class="sep">&middot;</span> <span class="honor">Oral Presentation</span>
+				</div>
+
+				<div class="paper-entry" data-category="continual">
+				<h3 data-category="continual">Learning to Branch for Multi-Task Learning</h3>
+				Pengsheng Guo, <span class="author-self">Chen-Yu Lee</span>, Daniel Ulbricht<br>
+				<b><a href="https://icml.cc/Conferences/2020/">ICML 2020</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2006.01895.pdf">Paper</a>
+				</div>
+
+				<div class="paper-entry" data-category="continual">
+				<h3 data-category="continual">Sliced Wasserstein Discrepancy for Unsupervised Domain Adaptation</h3>
+				<span class="author-self">Chen-Yu Lee</span>, Tanmay Batra, Mohammad Haris Baig, Daniel Ulbricht<br>
+				<b><a href="https://cvpr2019.thecvf.com/">CVPR 2019</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/1903.04064.pdf">Paper</a> <span class="sep">&middot;</span> <a href="https://github.com/apple/ml-cvpr2019-swd">Code</a> <span class="sep">&middot;</span> <a href="https://machinelearning.apple.com/2019/06/15/bridging-the-domain-gap-for-neural-models.html"> ML Journal</a>
+				</div>
+
+				<div class="paper-entry" data-category="continual">
+				<h3 data-category="continual">GradNorm: Gradient Normalization for Adaptive Loss Balancing in Deep Multitask Networks</h3>
+				Zhao Chen, Vijay Badrinarayanan, <span class="author-self">Chen-Yu Lee</span>, Andrew Rabinovich<br>
+				<b><a href="https://icml.cc/Conferences/2018/">ICML 2018</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/1711.02257.pdf">Paper</a>
+				</div>
+
+				<div class="paper-entry" data-category="multimodal">
+				<h3 data-category="multimodal">RoomNet: End-to-End Room Layout Estimation</h3>
+				<span class="author-self">Chen-Yu Lee</span>, Vijay Badrinarayanan, Tomasz Malisiewicz, Andrew Rabinovich<br>
+				<b><a href="http://iccv2017.thecvf.com/">ICCV 2017</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/1703.06241.pdf">Paper</a>
+				</div>
+
+				<div class="paper-entry" data-category="document">
+				<h3 data-category="document">Recursive Recurrent Nets with Attention Modeling for OCR in the Wild</h3>
+				<span class="author-self">Chen-Yu Lee</span>, Simon Osindero<br>
+				<b><a href="https://cvpr2016.thecvf.com/">CVPR 2016</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/1603.03101v1.pdf">Paper</a>
+				</div>
+
+				<div class="paper-entry" data-category="classic">
+				<h3 data-category="classic">Generalizing Pooling Functions in Convolutional Neural Networks: Mixed, Gated, and Tree</h3>
+				<span class="author-self">Chen-Yu Lee</span>, Patrick Gallagher, Zhuowen Tu<br>
+				<b><a href="https://ieeexplore.ieee.org/document/7927440/">TPAMI 2017</a></b> <span class="sep">&middot;</span> <a href="assets/Lee_PAMI17.pdf">Paper</a><br>
+				<b><a href="https://www.aistats.org/aistats2016/">AISTATS 2016</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/1509.08985v2.pdf">Paper</a> <span class="sep">&middot;</span> <a href="https://github.com/chl260/general-pooling">Code</a>
+				</div>
+
+				<div class="paper-entry" data-category="classic">
+				<h3 data-category="classic">Deeply-Supervised Nets</h3>
+				<span class="author-self">Chen-Yu Lee</span>*, Saining Xie*, Patrick Gallagher, Zhengyou Zhang, Zhuowen Tu (*equal contribution)<br>
+				<b><a href="https://www.aistats.org/aistats2015/">AISTATS 2015</a></b> <span class="sep">&middot;</span> <a href="https://proceedings.mlr.press/v38/lee15a.pdf">Paper</a> <span class="sep">&middot;</span> <a href="https://github.com/s9xie/DSN">Code</a> <span class="sep">&middot;</span> <span class="honor"><a href="assets/images/tta.jpg">Test-of-Time Award</a>, <a href="https://virtual.aistats.org/virtual/2025/poster/10054">AISTATS 2025</a> (<a href="assets/dsn-aistats-testoftime.pdf">slides</a>)</span><br>
+				<b><a href="http://www.dlworkshop.org/accepted-papers/">NIPS 2014 DL Workshop</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/abs/1409.5185">Paper</a> <span class="sep">&middot;</span> <span class="honor">Oral Presentation</span>
+				</div>
+
+				<div class="paper-entry" data-category="document">
+				<h3 data-category="document">Region-based Discriminative Feature Pooling for Scene Text Recognition</h3>
+				<span class="author-self">Chen-Yu Lee</span>, Anurag Bhardwaj, Wei Di, Vignesh Jagadeesh, Robinson Piramuthu<br>
+				<b><a href="http://www.pamitc.org/cvpr14/">CVPR 2014</a></b> <span class="sep">&middot;</span> <a href="assets/Lee_CVPR14.pdf">Paper</a>
+				</div>
+
+						</div>
+		
+			
+		</section>
+	</div>
+</div>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  // Replace the <i data-lucide> placeholders with inline SVG icons
+  lucide.createIcons();
+</script>
+<script>
+  // Filter "Selected Papers" by topic via the pill tabs above the list.
+  // Each paper is wrapped in a single <div class="paper-entry"> — filtering
+  // hides/shows that one element per paper, atomically, instead of juggling
+  // several sibling nodes per entry. That's what keeps a paper's title and
+  // its body text from ever getting out of sync with each other while
+  // switching between tabs.
+  (function () {
+    var tabs = document.querySelectorAll('.paper-tab');
+    var entries = document.querySelectorAll('.papers-section .paper-entry');
+    if (!tabs.length || !entries.length) return;
+
+    function applyFilter(filter) {
+      var firstShown = false;
+      entries.forEach(function (entry) {
+        var show = filter === 'all' || entry.getAttribute('data-category') === filter;
+        entry.hidden = !show;
+        // The first *visible* entry shouldn't carry the usual top margin,
+        // regardless of which filter is active.
+        entry.classList.toggle('is-first-visible', show && !firstShown);
+        if (show) firstShown = true;
+      });
+    }
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        tabs.forEach(function (t) { t.classList.remove('active'); });
+        tab.classList.add('active');
+        applyFilter(tab.getAttribute('data-filter'));
+      });
+    });
+  })();
+</script>
+
+<script>
+  // Light / dark toggle. Default follows the device; a click overrides and is remembered.
+  (function () {
+    var root = document.documentElement;
+    var btn = document.querySelector('.theme-toggle');
+    var mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+    function isDark() {
+      var t = root.getAttribute('data-theme');
+      return t ? t === 'dark' : !!(mq && mq.matches);
+    }
+    function sync() {
+      var d = isDark();
+      root.classList.toggle('is-dark', d);
+      btn.setAttribute('aria-label', d ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+    btn.addEventListener('click', function () {
+      var next = isDark() ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      sync();
+    });
+    if (mq && mq.addEventListener) mq.addEventListener('change', sync);
+    sync();
+  })();
+</script>
+
+</body>
+</html>
