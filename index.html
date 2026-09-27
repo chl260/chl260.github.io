@@ -310,11 +310,13 @@ body { background: var(--bg); }
 /* mobile: nav becomes a full-width top bar in the page color, so text never shows through */
 @media (max-width: 640px) {
   .site-nav {
-    top: 0; left: 0; right: 0; height: 48px;
+    top: 0; left: 0; right: 0; height: 34px;
     justify-content: center; background: var(--bg);
-    border-bottom: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule); font-size: 0.82rem;
   }
-  #cv { margin-top: 72px; }
+  .site-nav a { padding: 2px 0; }
+  .site-nav .theme-toggle svg { width: 14px; height: 14px; }
+  #cv { margin-top: 54px; }
 }
 </style>
 <script>
