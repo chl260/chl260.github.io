@@ -306,6 +306,16 @@ a.quiet:hover { text-decoration-color: var(--accent); }
   }
 }
 body { background: var(--bg); }
+
+/* mobile: nav becomes a full-width top bar in the page color, so text never shows through */
+@media (max-width: 640px) {
+  .site-nav {
+    top: 0; left: 0; right: 0; height: 48px;
+    justify-content: center; background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+  }
+  #cv { margin-top: 72px; }
+}
 </style>
 <script>
   // Apply a saved theme choice before the page paints (no flash).
