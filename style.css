@@ -225,7 +225,7 @@ section:last-of-type  { padding-bottom: 8px; }
 
 .talks-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 18px 20px;
   margin-top: 6px;
 }
