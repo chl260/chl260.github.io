@@ -318,6 +318,16 @@ body { background: var(--bg); }
   .site-nav .theme-toggle svg { width: 14px; height: 14px; }
   #cv { margin-top: 54px; }
 }
+
+/* award & press line: semibold italic */
+.paper-entry .honor { font-weight: 600; font-style: normal; }
+
+/* em dash introduces the award / press note */
+.sep.dash { margin: 0 2px; }
+
+/* upcoming talk line above the talk photos */
+.upcoming { font-size: 0.92rem; color: var(--ink-soft); margin: 18px 0 0; }
+.upcoming-label { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
 </style>
 <script>
   // Apply a saved theme choice before the page paints (no flash).
@@ -447,6 +457,7 @@ body { background: var(--bg); }
 						</div>
 					</div>
 				</div>
+				<p class="upcoming"><span class="upcoming-label">Upcoming</span> <span class="sep">&middot;</span> Guest lecture on self-evolving agents, UC Berkeley, October 2026</p>
 			</div>
 		</section>
 
@@ -480,36 +491,36 @@ body { background: var(--bg); }
 				<h3 >ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory</h3>
 				<span class="why">Distills reusable insights from an agent's successes and failures.</span>
 				<span class="authors">Siru Ouyang, Jun Yan, I-Hung Hsu, Yanfei Chen, Ke Jiang, Zifeng Wang, Rujun Han, Long T. Le, Samira Daruki, Xiangru Tang, Vishy Tirumalashetty, George Lee, Mahsan Rofouei, Hangfei Lin, Jiawei Han, <span class="author-self">Chen-Yu Lee</span>, Tomas Pfister</span>
-				<b><a href="https://iclr.cc/Conferences/2026">ICLR 2026</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2509.25140">Paper</a> <span class="sep">&middot;</span> <a href="https://github.com/google-research/reasoning-bank">Code</a> <span class="sep">&middot;</span> <a href="https://research.google/blog/reasoningbank-enabling-agents-to-learn-from-experience/">Google AI Blog</a> <span class="sep">&middot;</span> <span class="honor">Featured in <a href="https://venturebeat.com/ai/new-memory-framework-builds-ai-agents-that-can-handle-the-real-worlds">VentureBeat</a> and <a href="https://youtu.be/36OBX5lQjGc?si=FRcq689g61y5sXyX&t=224">Andrej Karpathy's interview</a></span>
+				<b><a href="https://iclr.cc/Conferences/2026">ICLR 2026</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2509.25140">Paper</a> <span class="sep">&middot;</span> <a href="https://github.com/google-research/reasoning-bank">Code</a> <span class="sep">&middot;</span> <a href="https://research.google/blog/reasoningbank-enabling-agents-to-learn-from-experience/">Google AI Blog</a> <span class="sep dash">&mdash;</span> <span class="honor">Featured in <a href="https://venturebeat.com/ai/new-memory-framework-builds-ai-agents-that-can-handle-the-real-worlds">VentureBeat</a> and <a href="https://youtu.be/36OBX5lQjGc?si=FRcq689g61y5sXyX&t=224">Andrej Karpathy's interview</a></span>
 				</div>
 
 <div class="paper-entry" >
 				<h3 >Deep Researcher with Test-Time Diffusion</h3>
 				<span class="why">The research agent behind Gemini Enterprise Deep Research and Gemini Deep Research Max.</span>
 				<span class="authors">Rujun Han, Yanfei Chen, Zoey CuiZhu, Lesly Miculicich, Guan Sun, Yuanjun Bi, Weiming Wen, Hui Wan, Chunfeng Wen, Solène Maître, George Lee, Vishy Tirumalashetty, Emily Xue, Zizhao Zhang, Salem Haykal, Burak Gokturk, Tomas Pfister, <span class="author-self">Chen-Yu Lee</span></span>
-				<b><a href="https://arxiv.org/">arXiv 2025</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2507.16075">Paper</a> <span class="sep">&middot;</span> <a href="https://research.google/blog/deep-researcher-with-test-time-diffusion/">Google AI Blog</a> <span class="sep">&middot;</span> <span class="honor">Featured in <a href="https://venturebeat.com/ai/googles-new-diffusion-ai-agent-mimics-human-writing-to-improve-enterprise-research">VentureBeat</a></span>
+				<b><a href="https://arxiv.org/">arXiv 2025</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2507.16075">Paper</a> <span class="sep">&middot;</span> <a href="https://research.google/blog/deep-researcher-with-test-time-diffusion/">Google AI Blog</a> <span class="sep dash">&mdash;</span> <span class="honor">Featured in <a href="https://venturebeat.com/ai/googles-new-diffusion-ai-agent-mimics-human-writing-to-improve-enterprise-research">VentureBeat</a></span>
 				</div>
 
 <div class="paper-entry" >
 				<h3 >Budget-Aware Tool-Use Enables Effective Agent Scaling</h3>
 				<span class="why">Scaling agents under explicit tool and compute budgets.</span>
 				<span class="authors">Tengxiao Liu, Zifeng Wang, Jin Miao, I-Hung Hsu, Jun Yan, Jiefeng Chen, Rujun Han, Fangyuan Xu, Yanfei Chen, Ke Jiang, Samira Daruki, Yi Liang, William Yang Wang, Tomas Pfister, <span class="author-self">Chen-Yu Lee</span></span>
-				<b><a href="https://colmweb.org/">COLM 2026</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2511.17006">Paper</a> <span class="sep">&middot;</span> <a href="https://github.com/google-research/budget-aware-agent">Code</a> <span class="sep">&middot;</span> <span class="honor">Featured in <a href="https://venturebeat.com/ai/googles-new-framework-helps-ai-agents-spend-their-compute-and-tool-budget">VentureBeat</a></span>
+				<b><a href="https://colmweb.org/">COLM 2026</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2511.17006">Paper</a> <span class="sep">&middot;</span> <a href="https://github.com/google-research/budget-aware-agent">Code</a> <span class="sep dash">&mdash;</span> <span class="honor">Featured in <a href="https://venturebeat.com/ai/googles-new-framework-helps-ai-agents-spend-their-compute-and-tool-budget">VentureBeat</a></span>
 				</div>
 
 <div class="paper-entry" >
 				<h3 >Distilling Step-by-Step! Outperforming Larger Language Models with Less Training Data and Smaller Model Sizes</h3>
 				<span class="why">Small models trained on LLM rationales outperform much larger LLMs using less data.</span>
 				<span class="authors">Cheng-Yu Hsieh, Chun-Liang Li, Chih-Kuan Yeh, Hootan Nakhost, Yasuhisa Fujii, Alexander Ratner, Ranjay Krishna, <span class="author-self">Chen-Yu Lee</span>, Tomas Pfister</span>
-				<b><a href="https://2023.aclweb.org/">ACL 2023</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2305.02301.pdf">Paper</a> (Findings) <span class="sep">&middot;</span> <a href="https://github.com/google-research/distilling-step-by-step">Code</a> <span class="sep">&middot;</span> <a href="https://blog.research.google/2023/09/distilling-step-by-step-outperforming.html">Google AI Blog</a> <span class="sep">&middot;</span> <span class="honor"><a href="https://blog.research.google/2023/07/google-at-acl-2023.html">Google ACL 2023 Spotlight</a></span>
+				<b><a href="https://2023.aclweb.org/">ACL 2023</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2305.02301.pdf">Paper</a> (Findings) <span class="sep">&middot;</span> <a href="https://github.com/google-research/distilling-step-by-step">Code</a> <span class="sep">&middot;</span> <a href="https://blog.research.google/2023/09/distilling-step-by-step-outperforming.html">Google AI Blog</a> <span class="sep dash">&mdash;</span> <span class="honor"><a href="https://blog.research.google/2023/07/google-at-acl-2023.html">Google ACL 2023 Spotlight</a></span>
 				</div>
 
 <div class="paper-entry" >
 				<h3 >Deeply-Supervised Nets</h3>
 				<span class="why">Adds supervision to hidden layers to train deep networks more effectively.</span>
 				<span class="authors"><span class="author-self">Chen-Yu Lee</span>*, Saining Xie*, Patrick Gallagher, Zhengyou Zhang, Zhuowen Tu (*equal contribution)</span>
-				<b><a href="https://www.aistats.org/aistats2015/">AISTATS 2015</a></b> <span class="sep">&middot;</span> <a href="https://proceedings.mlr.press/v38/lee15a.pdf">Paper</a> <span class="sep">&middot;</span> <a href="https://github.com/s9xie/DSN">Code</a> <span class="sep">&middot;</span> <span class="honor"><a href="assets/images/tta.jpg">Test-of-Time Award</a>, <a href="https://virtual.aistats.org/virtual/2025/poster/10054">AISTATS 2025</a> (<a href="assets/dsn-aistats-testoftime.pdf">slides</a>)</span><br>
-				<b><a href="http://www.dlworkshop.org/accepted-papers/">NIPS 2014 DL Workshop</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/abs/1409.5185">Paper</a> <span class="sep">&middot;</span> <span class="honor">Oral Presentation</span>
+				<b><a href="https://www.aistats.org/aistats2015/">AISTATS 2015</a></b> <span class="sep">&middot;</span> <a href="https://proceedings.mlr.press/v38/lee15a.pdf">Paper</a> <span class="sep">&middot;</span> <a href="https://github.com/s9xie/DSN">Code</a> <span class="sep dash">&mdash;</span> <span class="honor"><a href="assets/images/tta.jpg">Test-of-Time Award</a>, <a href="https://virtual.aistats.org/virtual/2025/poster/10054">AISTATS 2025</a> (<a href="assets/dsn-aistats-testoftime.pdf">slides</a>)</span><br>
+				<b><a href="http://www.dlworkshop.org/accepted-papers/">NIPS 2014 DL Workshop</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/abs/1409.5185">Paper</a> <span class="sep dash">&mdash;</span> <span class="honor">Oral Presentation</span>
 				</div>
 			</div>
 
@@ -539,9 +550,7 @@ body { background: var(--bg); }
 
 					<b>Reviewer:</b> NeurIPS, ICML, ICLR, ACL, NAACL, EMNLP, COLM, CVPR, ICCV, ECCV, BMVC, PAMI, IJCV, JMLR <br>
 
-					<b>Outstanding Reviewer:</b> CVPR 2019, BMVC 2019 <br>
-
-					<b>Organizer / PC:</b> SIGKDD 2025 AI4SupplyChain, CVPR 2020 CV4AR/VR
+					<b>Outstanding Reviewer:</b> CVPR 2019, BMVC 2019
 				</article>
 			</div>
 			<div class="clear"></div>
