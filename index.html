@@ -325,6 +325,11 @@ body { background: var(--bg); }
 /* em dash introduces the award / press note */
 .sep.dash { margin: 0 2px; }
 
+/* upcoming talk card: fills the empty slots in the last row */
+.upcoming-thumb { aspect-ratio: 16 / 9; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; border: 1px solid var(--rule); border-radius: 10px; background: transparent; }
+.upcoming-thumb .upcoming-label { font-size: 0.7rem; }
+.upcoming-thumb .upcoming-date { font-size: 0.85rem; color: var(--muted); }
+.upcoming-thumb .upcoming-venue { font-size: 1.15rem; font-weight: 500; letter-spacing: -0.01em; color: var(--ink); }
 /* upcoming talk line above the talk photos */
 .upcoming { font-size: 0.92rem; color: var(--ink-soft); margin: 18px 0 0; }
 .upcoming-label { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
@@ -431,16 +436,25 @@ body { background: var(--bg); }
 			<div class="sectionContent">
 				<div class="talks-grid">
 					<div class="talk">
-						<a class="talk-thumb" href="https://blog.google/company-news/outreach-and-initiatives/grow-with-google/people-management-essentials-course/">
-							<img src="assets/images/ai-talent-keynote.jpeg?v=2" alt="Keynote at The Google School for Leaders, 2026" style="object-position: center 45%;" />
+						<a class="talk-thumb" href="assets/images/berkeley2026-full.jpg">
+							<img src="assets/images/berkeley2026.jpg?v=1" alt="Guest lecture at UC Berkeley, From Goldfish to Self-Improving Agents, 2026" style="object-position: center 50%;" />
 						</a>
 						<div class="talk-caption">
-							<em>Keynote at <a href="https://www.youtube.com/watch?v=jM9vQZI4PmM">The Google School for Leaders</a> 2026, on turning research into product impact.</em>
+							<em><a href="assets/chenyulee-berkeley-2026.pdf">From Goldfish to Self-Improving Agents</a>, a Fall 2026 guest lecture at UC Berkeley on continual learning and safe self-improvement.</em>
 						</div>
 					</div>
 
 					<div class="talk">
-						<a class="talk-thumb" href="https://virtual.aistats.org/virtual/2025/poster/10054">
+						<a class="talk-thumb" href="assets/images/neurips2025.JPG">
+							<img src="assets/images/neurips2025.JPG?v=5" alt="Agent Fundamentals talk at NeurIPS 2025 Expo" style="object-position: center 65%;" />
+						</a>
+						<div class="talk-caption">
+							<em><a href="assets/neurips2025-expo-talk.pdf">Agent Fundamentals</a>, <a href="https://research.google/conferences-and-events/google-at-neurips-2025/">Expo Talk</a> at <a href="https://neurips.cc/Conferences/2025">NeurIPS 2025</a>, on deep research, memory, and multi-agent systems in Gemini Enterprise.</em>
+						</div>
+					</div>
+
+					<div class="talk">
+						<a class="talk-thumb" href="assets/images/tta-talk.jpeg">
 							<img src="assets/images/tta-talk.jpeg?v=3" alt="Test-of-Time Award talk at AISTATS 2025" style="object-position: center 95%;" />
 						</a>
 						<div class="talk-caption">
@@ -449,15 +463,24 @@ body { background: var(--bg); }
 					</div>
 
 					<div class="talk">
-						<a class="talk-thumb" href="assets/neurips2025-expo-talk.pdf">
-							<img src="assets/images/neurips2025.JPG?v=5" alt="Agent Fundamentals talk at NeurIPS 2025 Expo" style="object-position: center 65%;" />
+						<a class="talk-thumb" href="https://blog.google/company-news/outreach-and-initiatives/grow-with-google/people-management-essentials-course/">
+							<img src="assets/images/ai-talent-keynote.jpeg?v=2" alt="Keynote at The Google School for Leaders, 2026" style="object-position: center 45%;" />
 						</a>
 						<div class="talk-caption">
-							<em><a href="assets/neurips2025-expo-talk.pdf">Agent Fundamentals</a>, <a href="https://research.google/conferences-and-events/google-at-neurips-2025/">Expo Talk</a> at <a href="https://neurips.cc/Conferences/2025">NeurIPS 2025</a>, on deep research, memory, and multi-agent systems in Gemini Enterprise.</em>
+							<em>Keynote at <a href="https://www.youtube.com/watch?v=jM9vQZI4PmM">The Google School for Leaders</a> 2026, on turning research into product impact.</em>
+						</div>
+					</div>
+					<div class="talk">
+						<div class="upcoming-thumb">
+							<span class="upcoming-label">Upcoming</span>
+							<span class="upcoming-venue">ICLR 2027</span>
+							<span class="upcoming-date">April 29–30</span>
+						</div>
+						<div class="talk-caption">
+							<em>Invited talks at the <a href="https://iclr.cc/">ICLR 2027</a> workshops on long-horizon agents, self-improving agents, and agent evaluation.</em>
 						</div>
 					</div>
 				</div>
-				<p class="upcoming"><span class="upcoming-label">Upcoming</span> <span class="sep">&middot;</span> Invited talk, Workshop on Long-Horizon Agents, ICLR 2027</p>
 			</div>
 		</section>
 
