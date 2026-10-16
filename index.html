@@ -327,6 +327,7 @@ body { background: var(--bg); }
 
 /* upcoming talk card: fills the empty slots in the last row */
 .upcoming-thumb { aspect-ratio: 16 / 9; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; border: 1px solid var(--rule); border-radius: 10px; background: transparent; }
+.upcoming-thumb .upcoming-venue a { color: inherit; text-decoration: none; }
 .upcoming-thumb .upcoming-label { font-size: 0.7rem; }
 .upcoming-thumb .upcoming-date { font-size: 0.85rem; color: var(--muted); }
 .upcoming-thumb .upcoming-venue { font-size: 1.15rem; font-weight: 500; letter-spacing: -0.01em; color: var(--ink); }
@@ -473,11 +474,11 @@ body { background: var(--bg); }
 					<div class="talk">
 						<div class="upcoming-thumb">
 							<span class="upcoming-label">Upcoming</span>
-							<span class="upcoming-venue">ICLR 2027</span>
+							<span class="upcoming-venue"><a href="https://iclr.cc/">ICLR 2027</a></span>
 							<span class="upcoming-date">April 29–30</span>
 						</div>
 						<div class="talk-caption">
-							<em>Invited talks at the <a href="https://iclr.cc/">ICLR 2027</a> workshops on long-horizon agents, self-improving agents, and agent evaluation.</em>
+							<em>Invited talks at three workshops on long-horizon agents, self-improving agents, and agent evaluation.</em>
 						</div>
 					</div>
 				</div>
