@@ -241,7 +241,7 @@ a:hover { color: var(--accent) !important; text-decoration-color: var(--accent);
 .paper-entry .authors { color: var(--p-auth); }
 
 /* talk captions: links shown by color only */
-.talk-caption a, .talk-caption a:hover { text-decoration: none; }
+.talk-caption a, .talk-caption a:hover, .upcoming-list a, .upcoming-list a:hover { text-decoration: none; }
 .talk-caption a { color: var(--ink); }
 
 /* card product-name links: no underline, coral on hover */
@@ -334,6 +334,15 @@ body { background: var(--bg); }
 /* upcoming talk line above the talk photos */
 .upcoming { font-size: 0.92rem; color: var(--ink-soft); margin: 18px 0 0; }
 .upcoming-label { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.upcoming-panel { grid-column: span 2; border: 1px solid var(--rule); border-radius: 10px; padding: 14px 20px; display: flex; flex-direction: column; justify-content: center; }
+.upcoming-list { list-style: none; margin: 8px 0 0; padding: 0; }
+.upcoming-list li { display: flex; gap: 16px; padding: 12px 0; border-top: 1px solid var(--rule); }
+.upcoming-list li:first-child { border-top: 0; padding-top: 2px; }
+.upcoming-list li:last-child { padding-bottom: 0; }
+.upcoming-list .up-date { flex: 0 0 64px; font-size: 0.82rem; color: var(--muted); padding-top: 3px; font-variant-numeric: tabular-nums; }
+.upcoming-list .up-body { display: flex; flex-direction: column; gap: 2px; font-size: 0.85rem; line-height: 1.45; color: var(--muted); }
+.upcoming-list .up-body b { font-weight: 500; font-size: 0.95rem; color: var(--ink); }
+@media (max-width: 640px) { .upcoming-panel { grid-column: auto; } }
 </style>
 <script>
   // Apply a saved theme choice before the page paints (no flash).
@@ -471,15 +480,18 @@ body { background: var(--bg); }
 							<em>Keynote at <a href="https://www.youtube.com/watch?v=jM9vQZI4PmM">The Google School for Leaders</a> 2026, on turning research into product impact.</em>
 						</div>
 					</div>
-					<div class="talk">
-						<div class="upcoming-thumb">
-							<span class="upcoming-label">Upcoming</span>
-							<span class="upcoming-venue"><a href="https://iclr.cc/">ICLR 2027</a></span>
-							<span class="upcoming-date">April 29–30</span>
-						</div>
-						<div class="talk-caption">
-							<em>Invited talks at three workshops on long-horizon agents, self-improving agents, and agent evaluation.</em>
-						</div>
+					<div class="talk upcoming-panel">
+						<span class="upcoming-label">Upcoming</span>
+						<ul class="upcoming-list">
+							<li>
+								<span class="up-date">Feb 2027</span>
+								<span class="up-body"><b><a href="https://www.stanford.edu/">Stanford</a></b><span class="up-desc">Guest lecture on AI4 Engineering.</span></span>
+							</li>
+							<li>
+								<span class="up-date">Apr 2027</span>
+								<span class="up-body"><b><a href="https://iclr.cc/">ICLR 2027</a></b><span class="up-desc">Invited speaker at three workshops on long-horizon agents, self-improvement, and evaluation.</span></span>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>
@@ -583,7 +595,7 @@ body { background: var(--bg); }
 
 			<div class="sectionContent">
 				<article>
-					<b>Area Chair:</b> NeurIPS (2025, 2026), ICLR (2024, 2025, 2026, 2027), ICML (2026) <br>
+					<b>Area Chair:</b> NeurIPS (2025, 2026), ICLR (2024, 2025, 2026, 2027), ICML (2026, 2027) <br>
 
 					<b>Reviewer:</b> NeurIPS, ICML, ICLR, ACL, NAACL, EMNLP, COLM, CVPR, ICCV, ECCV, BMVC, PAMI, IJCV, JMLR <br>
 
