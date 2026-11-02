@@ -7,20 +7,20 @@
 <title>Chen-Yu Lee</title>
 <link rel="canonical" href="https://chenyulee.com/" />
 
-<meta name="description" content="Chen-Yu Lee leads research on long-horizon agents: how they research, remember, and improve themselves. Principal Scientist &amp; Director, Google Cloud AI Research. Test-of-Time Award, AISTATS 2025.">
+<meta name="description" content="Chen-Yu Lee leads research on agents for long-horizon, real-world work, and the environments, experience, and self-improvement loops that make them better. Principal Scientist &amp; Director, Google Cloud AI Research. Test-of-Time Award, AISTATS 2025.">
 <meta name="author" content="Chen-Yu Lee">
 
 <!-- Social / link previews (what people see when your link is pasted into Slack, X, email) -->
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://chenyulee.com/">
-<meta property="og:title" content="Chen-Yu Lee: Long-horizon agents">
-<meta property="og:description" content="Research on agents that research, remember, and improve themselves, from papers to Gemini Deep Research Max.">
+<meta property="og:title" content="Chen-Yu Lee: Agents for long-horizon, real-world work">
+<meta property="og:description" content="Research on agents that learn from experience and improve themselves safely, carried into products across the Gemini ecosystem.">
 <meta property="og:image" content="https://chenyulee.com/assets/profile/me3.JPG">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@chl260">
 <meta name="twitter:creator" content="@chl260">
-<meta name="twitter:title" content="Chen-Yu Lee: Long-horizon agents">
-<meta name="twitter:description" content="Research on agents that research, remember, and improve themselves, from papers to Gemini Deep Research Max.">
+<meta name="twitter:title" content="Chen-Yu Lee: Agents for long-horizon, real-world work">
+<meta name="twitter:description" content="Research on agents that learn from experience and improve themselves safely, carried into products across the Gemini ecosystem.">
 <meta name="twitter:image" content="https://chenyulee.com/assets/profile/me3.JPG">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,7 +36,8 @@
 .tagline { font-size: 0.95rem; line-height: 1.4; color: var(--muted); margin-top: 9px; margin-left: 2px; }
 #contactDetails { margin-top: 6px; }
 
-.thesis { font-size: 1.12rem !important; line-height: 1.5 !important; color: var(--ink); margin-bottom: 12px !important; }
+.thesis { font-size: 1.04rem !important; line-height: 1.5 !important; color: var(--ink); margin-top: 8px !important; margin-bottom: 16px !important; }
+section:has(.thesis) { padding-bottom: 0; }
 
 .proof-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 2px 0 16px; }
 .proof {
@@ -186,6 +187,10 @@ a:hover { color: var(--accent) !important; text-decoration-color: var(--accent);
 /* separate the cards with lines and space, not fills */
 .subhead { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 30px 0 12px; }
 .intro-cards { margin: 0 0 6px; }
+.also-shipped { margin: 14px 0 0; }
+.also-shipped .also-label { font-weight: 700; color: var(--ink); }
+.also-shipped ul { margin: 4px 0 0; padding-left: 18px; }
+.also-shipped li { margin: 2px 0; }
 .intro-card { border-top: 1px solid var(--ink) !important; padding-top: 12px !important; }
 
 /* badges become quiet gray text */
@@ -219,7 +224,7 @@ a:hover { color: var(--accent) !important; text-decoration-color: var(--accent);
 .agenda { border: 0; border-left: 1px solid var(--agenda-line); border-radius: 0; padding: 0 0 0 22px; margin: 18px 0 8px; }
 .agenda li, .agenda li:first-child { border-top: 0; padding: 0 0 18px; }
 .agenda li:last-child { padding-bottom: 0; }
-.background { margin-top: 26px; }
+.background { margin-top: 0; }
 @media (max-width: 640px) { .agenda { padding-left: 16px; } }
 
 /* papers: quieter authors, venue without underline */
@@ -334,9 +339,9 @@ body { background: var(--bg); }
 /* upcoming talk line above the talk photos */
 .upcoming { font-size: 0.92rem; color: var(--ink-soft); margin: 18px 0 0; }
 .upcoming-label { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
-.upcoming-panel { grid-column: span 2; border: 1px solid var(--rule); border-radius: 10px; padding: 14px 20px; display: flex; flex-direction: column; justify-content: center; }
-.upcoming-list { list-style: none; margin: 8px 0 0; padding: 0; }
-.upcoming-list li { display: flex; gap: 16px; padding: 12px 0; border-top: 1px solid var(--rule); }
+.upcoming-panel { grid-column: span 2; align-self: start; border: 1px solid var(--rule); border-radius: 10px; padding: 12px 20px; display: flex; flex-direction: column; justify-content: center; }
+.upcoming-list { list-style: none; margin: 6px 0 0; padding: 0; }
+.upcoming-list li { display: flex; gap: 16px; padding: 8px 0; border-top: 1px solid var(--rule); }
 .upcoming-list li:first-child { border-top: 0; padding-top: 2px; }
 .upcoming-list li:last-child { padding-bottom: 0; }
 .upcoming-list .up-date { flex: 0 0 64px; font-size: 0.82rem; color: var(--muted); padding-top: 3px; font-variant-numeric: tabular-nums; }
@@ -379,7 +384,6 @@ body { background: var(--bg); }
 						<a href="https://www.linkedin.com/in/chenyulee260"><span>LinkedIn</span></a>
 						<span class="sep" aria-hidden="true">&middot;</span>
 						<a href="mailto:chenyulee260@gmail.com"><span>Email</span></a>
-						<!-- TODO: optionally add GitHub -->
 					</li>
 				</ul>
 			</div>
@@ -390,23 +394,37 @@ body { background: var(--bg); }
 		<section>
 			<div class="sectionContent">
 				<h4 class="thesis">
-					I lead teams across research, product, and engineering building <b>agents that work over long horizons</b>: how they research, remember, and improve themselves. We carry that research into products <a href="https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q4-2025/#:~:text=We%20have%20sold%20more%20than%208%20million%20paid%20seats,to%20streamline%20knowledge%20management%20and%20automate%20processes">used by millions</a>.
+					I lead research, product, and engineering teams building <b>agents for long-horizon, real-world work</b>, and the environments, experience, and self-improvement that make them better over time. We carry that research into products <a href="https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q4-2025/#:~:text=We%20have%20sold%20more%20than%208%20million%20paid%20seats,to%20streamline%20knowledge%20management%20and%20automate%20processes">used by millions</a> across the Gemini ecosystem, and into internal agents powering mission-critical work at Google.
 				</h4>
 
-				<div class="subhead">From research to production</div>
+			</div>
+		</section>
+
+		<section>
+			<div class="sectionTitle">
+				<h1>Research in Production</h1>
+			</div>
+			<div class="sectionContent">
 				<div class="intro-cards">
 					<div class="intro-card">
+						<div class="intro-card-title">Agents that Engineer</div>
+						<div class="intro-card-body">Brought our agents into production on Google&rsquo;s most critical infra buildout, hill-climbing on <b><a href="https://ple-bench.com/">Physical-Engineering&rsquo;s Last Exam</a></b>, our open benchmark where every frontier model still scores below 50%.</div>
+						</div>
+					<div class="intro-card">
 						<div class="intro-card-title">Agents that Research</div>
-						<div class="intro-card-body">Developed <b><a href="https://arxiv.org/pdf/2507.16075">Test-Time Diffusion Deep Researcher</a></b>, which refines drafts like diffusion denoising. Powering Gemini Deep Research (<a class="quiet" href="https://docs.cloud.google.com/gemini/enterprise/docs/research-assistant">Enterprise</a> &amp; <a class="quiet" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/">Max</a>), featured on Alphabet&rsquo;s Q1 2026 <a href="https://www.youtube.com/live/LPJoiDiVkTI?t=299s">earnings call</a>.</div>
+						<div class="intro-card-body">Developed <b><a href="https://arxiv.org/pdf/2507.16075">Test-Time Diffusion Deep Researcher</a></b>, powering Gemini Deep Research (<a class="quiet" href="https://docs.cloud.google.com/gemini/enterprise/docs/research-assistant">Enterprise</a> &amp; <a class="quiet" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/">Max</a>), featured on Alphabet&rsquo;s Q1 2026 <a href="https://www.youtube.com/live/LPJoiDiVkTI?t=299s">earnings call</a>.</div>
 						</div>
 					<div class="intro-card">
 						<div class="intro-card-title">Agents that Remember</div>
-						<div class="intro-card-body">Launched <b><a href="https://arxiv.org/pdf/2503.08026">MemoryBank</a></b>, long-term memory that lets agents recall and reflect on past interactions, in <a class="quiet" href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/scale/memory-bank">Gemini Enterprise</a> and <a class="quiet" href="https://docs.cloud.google.com/bigquery/docs/conversational-analytics">BigQuery</a>, highlighted at Google Cloud <a href="https://youtu.be/YKLkHvzjFDk?si=7S2smmAXvJe_1T7E&t=866">NEXT 2026</a>.</div>
+						<div class="intro-card-body">Launched <b><a href="https://arxiv.org/pdf/2503.08026">MemoryBank</a></b>, long-term memory for agents, one of the most used GenAI APIs on Google Cloud, powering <a class="quiet" href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/scale/memory-bank">Gemini Enterprise</a> and <a class="quiet" href="https://docs.cloud.google.com/bigquery/docs/conversational-analytics">BigQuery</a>, highlighted at Google Cloud <a href="https://youtu.be/YKLkHvzjFDk?si=7S2smmAXvJe_1T7E&t=866">NEXT 2026</a>.</div>
 						</div>
-					<div class="intro-card">
-						<div class="intro-card-title">Agents that Collaborate</div>
-						<div class="intro-card-body">Integrated <b><a href="https://arxiv.org/pdf/2502.04510">Heterogeneous Swarms</a></b>, which learns how multiple LLMs divide roles, into Gemini Enterprise <a class="quiet" href="https://docs.cloud.google.com/gemini/enterprise/docs/agent-designer">Agent Designer</a>, <a href="https://www.youtube.com/live/uLHF9T1SLrU?si=gdoejxeFGQQnvHr1&t=592">announced</a> by the Google Cloud CEO.</div>
-						</div>
+				</div>
+				<div class="also-shipped intro-card-body">
+					<span class="also-label">Also shipped</span>
+					<ul>
+						<li><b><a href="https://arxiv.org/pdf/2305.02301.pdf">Distilling Step-by-Step</a></b>, which teaches smaller Gemini models to reason like larger ones.</li>
+						<li><b><a href="https://arxiv.org/pdf/2502.04510">Heterogeneous Swarms</a></b>, which learns how multiple LLMs divide roles, in Gemini Enterprise <a class="quiet" href="https://docs.cloud.google.com/gemini/enterprise/docs/agent-designer">Agent Designer</a>, <a href="https://www.youtube.com/live/uLHF9T1SLrU?si=gdoejxeFGQQnvHr1&t=592">announced</a> by the Google Cloud CEO.</li>
+					</ul>
 				</div>
 			</div>
 		</section>
@@ -416,25 +434,36 @@ body { background: var(--bg); }
 				<h1>Research Agenda</h1>
 			</div>
 			<div class="sectionContent">
-				<h5 style="margin-bottom:6px">Today's agents are strong at short tasks but weak at getting better over time. Our teams now focus on what it takes to close that gap:</h5>
+				<h5 style="margin-bottom:6px">Today's agents are strong at short tasks but weak at getting better over time and at real-world work. Our teams focus on closing that gap:</h5>
 				<ul class="agenda">
 					<li>
 						<span class="q">Environments are the bottleneck.</span>
-						Agents can only learn from the worlds we give them, and most of those worlds are static. <b><a href="https://envharness.com/">EnvHarness</a></b> turns static data and tools into interactive environments that agents can learn in.
+						Agents can only learn from the worlds we give them, and most are static. <b><a href="https://envharness.com/">EnvHarness</a></b> turns static data and tools into interactive environments.
 					</li>
 					<li>
 						<span class="q">Experience should transfer.</span>
-						Agents should distill reusable insights from their successes and failures, and curate the skills worth carrying from one task to the next. That's the idea behind <b><a href="https://research.google/blog/reasoningbank-enabling-agents-to-learn-from-experience/">ReasoningBank</a></b> and <b><a href="https://arxiv.org/pdf/2605.06614">SkillOS</a></b>.
+						<b><a href="https://research.google/blog/reasoningbank-enabling-agents-to-learn-from-experience/">ReasoningBank</a></b> distills reusable insights from successes and failures; <b><a href="https://arxiv.org/pdf/2605.06614">SkillOS</a></b> curates the skills worth carrying to the next task.
 					</li>
 					<li>
-						<span class="q">Self-improvement has to stay bounded.</span>
-						Once agents improve their own harnesses, the hard problem is keeping that improvement stable, measurable, and under human oversight. <b><a href="https://regularized-rsi.com/">RRSI</a></b> regularizes the loop so the agent gets better without drifting.
+						<span class="q">Agents should improve themselves, safely.</span>
+						<b><a href="https://harness2.github.io/">Harness<sup>2</sup></a></b> lets agents build their own harnesses; <b><a href="https://veriharness.com/">VeriHarness</a></b> and <b><a href="https://regularized-rsi.com/">RRSI</a></b> keep that improvement verifiable, stable, and under human oversight.
+					</li>
+					<li>
+						<span class="q">The physical world is the next test.</span>
+						Humanity&rsquo;s Last Exam tests knowledge; Agents&rsquo; Last Exam tests digital work. <b><a href="https://ple-bench.com/">Physical-Engineering&rsquo;s Last Exam</a></b> tests the work behind the skyscrapers, power grids, and chip fabs we rely on, judged by what a licensed engineer would sign off on.
 					</li>
 				</ul>
+			</div>
+		</section>
+
+		<section>
+			<div class="sectionTitle">
+				<h1>Earlier Work</h1>
+			</div>
+			<div class="sectionContent">
 				<h5 class="background">
 					I've worked on deep learning since my PhD at UC San Diego, advised by <a href="https://pages.ucsd.edu/~ztu/">Zhuowen Tu</a> with mentorship from <a href="https://scholar.google.com/citations?user=Jq8ZS5kAAAAJ&hl=en">Simon Osindero</a>, where my work on <a href="https://proceedings.mlr.press/v38/lee15a.pdf">Deeply-Supervised Nets</a> later received the AISTATS 2025 <a href="assets/images/tta.jpg">Test-of-Time Award</a>. I then joined the AI Research Group at Magic Leap with <a href="https://scholar.google.com/citations?user=yOcNQVgAAAAJ&hl=en">Andrew Rabinovich</a>, and later Apple, where I launched foundational features for <a href="https://developer.apple.com/augmented-reality/arkit/">ARKit</a> (now powering <a href="https://www.apple.com/apple-vision-pro/">Vision Pro</a>) and published the group's first-ever research <a href="https://arxiv.org/pdf/1903.04064">paper</a>, at CVPR (featured by <a href="https://machinelearning.apple.com/2019/06/15/bridging-the-domain-gap-for-neural-models.html">Apple ML Journal</a>).
 				</h5>
-				<!-- TODO (optional, high value): link a short essay / blog post laying out this agenda in more depth. -->
 			</div>
 		</section>
 
@@ -468,7 +497,7 @@ body { background: var(--bg); }
 							<img src="assets/images/tta-talk.jpeg?v=3" alt="Test-of-Time Award talk at AISTATS 2025" style="object-position: center 95%;" />
 						</a>
 						<div class="talk-caption">
-							<em><a href="assets/images/tta.jpg">Test-of-Time Award</a> at <a href="https://aistats.org/aistats2025/awards.html">AISTATS 2025</a> for Deeply-Supervised Nets (<a href="https://x.com/aistats_conf/status/1918958574736150959">announcement</a> &middot; <a href="https://jacobsschool.ucsd.edu/news/release/3959?id=3959">UCSD News</a>).</em>
+							<em><a href="assets/dsn-aistats-testoftime.pdf">Test-of-Time Award</a> talk at <a href="https://aistats.org/aistats2025/awards.html">AISTATS 2025</a>, revisiting Deeply-Supervised Nets a decade on (<a href="https://x.com/aistats_conf/status/1918958574736150959">announcement</a> &middot; <a href="assets/images/tta.jpg">award</a> &middot; <a href="https://jacobsschool.ucsd.edu/news/release/3959?id=3959">UCSD News</a>).</em>
 						</div>
 					</div>
 
@@ -485,7 +514,7 @@ body { background: var(--bg); }
 						<ul class="upcoming-list">
 							<li>
 								<span class="up-date">Feb 2027</span>
-								<span class="up-body"><b><a href="https://www.stanford.edu/">Stanford</a></b><span class="up-desc">Guest lecture on AI4 Engineering.</span></span>
+								<span class="up-body"><b><a href="https://www.stanford.edu/">Stanford</a></b><span class="up-desc">Guest lecture on self-improving agents and AI for physical engineering.</span></span>
 							</li>
 							<li>
 								<span class="up-date">Apr 2027</span>
