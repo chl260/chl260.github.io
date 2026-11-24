@@ -320,6 +320,10 @@ body { background: var(--bg); }
 /* reserve the semibold width on every tab so switching doesn't shift the row */
 .paper-tab { display: inline-flex; flex-direction: column; align-items: center; }
 .paper-tab::after { content: attr(data-label); font-weight: 600; height: 0; visibility: hidden; overflow: hidden; user-select: none; pointer-events: none; }
+.paper-entry .badges { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 6px; }
+.paper-entry .badge { display: inline-flex; align-items: center; font-size: .86em; font-weight: 600; padding: 1px 10px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--honor) 45%, transparent); color: var(--honor) !important; background: color-mix(in srgb, var(--honor) 10%, transparent); text-decoration: none !important; }
+.paper-entry .badge:hover { border-color: var(--honor); }
+.paper-entry .badge-note { font-size: 1em; color: inherit; font-weight: 400; line-height: 1; }
 </style>
 <script>
   // Apply a saved theme choice before the page paints (no flash).
@@ -388,7 +392,8 @@ body { background: var(--bg); }
 <div class="paper-entry" data-category="bench">
 				<h3 data-category="bench">PLE: Physical-Engineering&#39;s Last Exam</h3>
 				<span class="authors">Rujun Han, Yufan Zhuang, Arijit Ray, Han Yu, Zoey CuiZhu, George Lee, Yifei Ming, Binz Roy, Varun Sakalkar, Vishy Tirumalashetty, Burak Gokturk, Tomas Pfister, <span class="author-self">Chen-Yu Lee</span></span>
-				<b><a href="https://arxiv.org/">arXiv 2026</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2610.30537">Paper</a> <span class="sep">&middot;</span> <a href="https://ple-bench.com/">Project Page</a> <span class="sep">&middot;</span> <a href="https://cloud.google.com/blog/products/ai-machine-learning/introducing-physical-engineerings-last-exam-for-agents">Blog</a> <span class="sep">&middot;</span> <a href="https://www.kaggle.com/competitions/physical-engineerings-last-exam">Kaggle Challenge</a> <span class="sep dash">&mdash;</span> <span class="honor">In partnership with <a href="https://www.mercor.com/blog/introducing-physical-engineering-s-last-exam-ple-with-google-cloud-ai-research/">Mercor</a> (part of <a href="https://www.mercor.com/apex/">APEX</a>)</span>
+				<b><a href="https://arxiv.org/">arXiv 2026</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2610.30537">Paper</a> <span class="sep">&middot;</span> <a href="https://ple-bench.com/">Project Page</a> <span class="sep">&middot;</span> <a href="https://cloud.google.com/blog/products/ai-machine-learning/introducing-physical-engineerings-last-exam-for-agents">Blog</a> <span class="sep">&middot;</span> <a href="https://www.kaggle.com/competitions/physical-engineerings-last-exam">Kaggle</a> <span class="sep">&middot;</span> <a href="https://huggingface.co/datasets/google/physical-engineerings-last-exam">Dataset</a> <span class="sep dash">&mdash;</span> <span class="honor">In partnership with <a href="https://www.mercor.com/blog/introducing-physical-engineering-s-last-exam-ple-with-google-cloud-ai-research/">Mercor</a> (part of <a href="https://www.mercor.com/apex/">APEX</a>)</span>
+				<span class="badges"><a class="badge" href="assets/images/ple-hf-trending.png">#1 Trending</a><a class="badge" href="assets/images/ple-hf-downloads.png">#2 Most downloaded</a><span class="badge-note">benchmark on Hugging Face, Nov 2026</span></span>
 				</div>
 
 				<div class="paper-entry" data-category="self">

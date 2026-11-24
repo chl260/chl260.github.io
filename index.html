@@ -348,6 +348,10 @@ body { background: var(--bg); }
 .upcoming-list .up-body { display: flex; flex-direction: column; gap: 2px; font-size: 0.85rem; line-height: 1.45; color: var(--muted); }
 .upcoming-list .up-body b { font-weight: 500; font-size: 0.9rem; color: var(--ink); }
 @media (max-width: 640px) { .upcoming-panel { grid-column: auto; } }
+.paper-entry .badges { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 6px; }
+.paper-entry .badge { display: inline-flex; align-items: center; font-size: .86em; font-weight: 600; padding: 1px 10px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--honor) 45%, transparent); color: var(--honor) !important; background: color-mix(in srgb, var(--honor) 10%, transparent); text-decoration: none !important; }
+.paper-entry .badge:hover { border-color: var(--honor); }
+.paper-entry .badge-note { font-size: 1em; color: inherit; font-weight: 400; line-height: 1; }
 </style>
 <script>
   // Apply a saved theme choice before the page paints (no flash).
@@ -407,8 +411,8 @@ body { background: var(--bg); }
 			<div class="sectionContent">
 				<div class="intro-cards">
 					<div class="intro-card">
-						<div class="intro-card-title">Agents that Engineer</div>
-						<div class="intro-card-body">Brought our agents into production on Google&rsquo;s most critical infra buildout, hill-climbing on <b><a href="https://ple-bench.com/">Physical-Engineering&rsquo;s Last Exam</a></b>, our open benchmark where every frontier model <a class="quiet" href="https://www.mercor.com/apex/partner-benchmarks/ple-bench-leaderboard/">scores below 50%</a>, now a <a class="quiet" href="https://www.kaggle.com/competitions/physical-engineerings-last-exam">$400K Kaggle challenge</a>.</div>
+						<div class="intro-card-title">Agents that Build</div>
+						<div class="intro-card-body">Created <b><a href="https://ple-bench.com/">Physical-Engineering&rsquo;s Last Exam</a></b>, the <b><a href="assets/images/ple-hf-trending.png">#1 trending</a></b> and <b><a href="assets/images/ple-hf-downloads.png">#2 most-downloaded</a></b> benchmark on <a class="quiet" href="https://huggingface.co/datasets/google/physical-engineerings-last-exam">Hugging Face</a>, now a <a class="quiet" href="https://www.kaggle.com/competitions/physical-engineerings-last-exam">$400K Kaggle challenge</a>. Our agents hill-climbing on it run in production on Google&rsquo;s most critical infra buildout.</div>
 						</div>
 					<div class="intro-card">
 						<div class="intro-card-title">Agents that Research</div>
@@ -437,19 +441,11 @@ body { background: var(--bg); }
 				<h5 style="margin-bottom:6px">Today's agents are strong at short tasks but weak at getting better over time and at real-world work. Our teams focus on closing that gap:</h5>
 				<ul class="agenda">
 					<li>
-						<span class="q">Environments are the bottleneck.</span>
-						Agents can only learn from the worlds we give them, and most are static. <b><a href="https://envharness.com/">EnvHarness</a></b> turns static data and tools into interactive environments.
+						<span class="q">Agents should learn from experience and improve themselves.</span>
+						We close the loop from environment to experience to self-modification. <b><a href="https://envharness.com/">EnvHarness</a></b> turns static data and tools into interactive environments; <b><a href="https://research.google/blog/reasoningbank-enabling-agents-to-learn-from-experience/">ReasoningBank</a></b> and <b><a href="https://arxiv.org/pdf/2605.06614">SkillOS</a></b> turn experience into reusable reasoning and skills; <b><a href="https://regularized-rsi.com/">RRSI</a></b> lets agents improve their own harnesses while keeping only real gains and the loop stable.
 					</li>
 					<li>
-						<span class="q">Experience should transfer.</span>
-						<b><a href="https://research.google/blog/reasoningbank-enabling-agents-to-learn-from-experience/">ReasoningBank</a></b> distills reusable insights from successes and failures; <b><a href="https://arxiv.org/pdf/2605.06614">SkillOS</a></b> curates the skills worth carrying to the next task.
-					</li>
-					<li>
-						<span class="q">Agents should improve themselves, safely.</span>
-						<b><a href="https://harness2.github.io/">Harness<sup>2</sup></a></b> lets agents build their own harnesses; <b><a href="https://veriharness.com/">VeriHarness</a></b> and <b><a href="https://regularized-rsi.com/">RRSI</a></b> keep that improvement verifiable, stable, and under human oversight.
-					</li>
-					<li>
-						<span class="q">Agents should be teammates, not tools.</span>
+						<span class="q">Agents should work like teammates.</span>
 						We are building AI teammates that automate the digital work of running an organization, starting with Google&rsquo;s own, and get better with every task.
 					</li>
 					<li>
@@ -457,17 +453,6 @@ body { background: var(--bg); }
 						Humanity&rsquo;s Last Exam tests knowledge; Agents&rsquo; Last Exam tests digital work. <b><a href="https://ple-bench.com/">Physical-Engineering&rsquo;s Last Exam</a></b> tests the work behind the skyscrapers, power grids, and chip fabs we rely on, judged by what a licensed engineer would sign off on.
 					</li>
 				</ul>
-			</div>
-		</section>
-
-		<section>
-			<div class="sectionTitle">
-				<h1>Earlier Work</h1>
-			</div>
-			<div class="sectionContent">
-				<h5 class="background">
-					I've worked on deep learning since my PhD at UC San Diego, advised by <a href="https://pages.ucsd.edu/~ztu/">Zhuowen Tu</a> with mentorship from <a href="https://scholar.google.com/citations?user=Jq8ZS5kAAAAJ&hl=en">Simon Osindero</a>, where my work on <a href="https://proceedings.mlr.press/v38/lee15a.pdf">Deeply-Supervised Nets</a> later received the AISTATS 2025 <a href="assets/images/tta.jpg">Test-of-Time Award</a>. I then joined the AI Research Group at Magic Leap with <a href="https://scholar.google.com/citations?user=yOcNQVgAAAAJ&hl=en">Andrew Rabinovich</a>, and later Apple, where I launched foundational features for <a href="https://developer.apple.com/augmented-reality/arkit/">ARKit</a> (now powering <a href="https://www.apple.com/apple-vision-pro/">Vision Pro</a>) and published the group's first-ever research <a href="https://arxiv.org/pdf/1903.04064">paper</a>, at CVPR (featured by <a href="https://machinelearning.apple.com/2019/06/15/bridging-the-domain-gap-for-neural-models.html">Apple ML Journal</a>).
-				</h5>
 			</div>
 		</section>
 
@@ -530,6 +515,17 @@ body { background: var(--bg); }
 			</div>
 		</section>
 
+		<section>
+			<div class="sectionTitle">
+				<h1>Earlier Work</h1>
+			</div>
+			<div class="sectionContent">
+				<h5 class="background">
+					I've worked on deep learning since my PhD at UC San Diego, advised by <a href="https://pages.ucsd.edu/~ztu/">Zhuowen Tu</a> with mentorship from <a href="https://scholar.google.com/citations?user=Jq8ZS5kAAAAJ&hl=en">Simon Osindero</a>, where my work on <a href="https://proceedings.mlr.press/v38/lee15a.pdf">Deeply-Supervised Nets</a> later received the AISTATS 2025 <a href="assets/images/tta.jpg">Test-of-Time Award</a>. I then joined the AI Research Group at Magic Leap with <a href="https://scholar.google.com/citations?user=yOcNQVgAAAAJ&hl=en">Andrew Rabinovich</a>, and later Apple, where I launched foundational features for <a href="https://developer.apple.com/augmented-reality/arkit/">ARKit</a> (now powering <a href="https://www.apple.com/apple-vision-pro/">Vision Pro</a>) and published the group's first-ever research <a href="https://arxiv.org/pdf/1903.04064">paper</a>, at CVPR (featured by <a href="https://machinelearning.apple.com/2019/06/15/bridging-the-domain-gap-for-neural-models.html">Apple ML Journal</a>).
+				</h5>
+			</div>
+		</section>
+
 		<section class="papers-section">
 			<div class="sectionTitle">
 				<h1>Selected Papers</h1>
@@ -539,7 +535,8 @@ body { background: var(--bg); }
 				<h3 >PLE: Physical-Engineering&#39;s Last Exam</h3>
 				<span class="why">Tests agents on real physical engineering work. Every frontier model scores below 50%.</span>
 				<span class="authors">Rujun Han, Yufan Zhuang, Arijit Ray, Han Yu, Zoey CuiZhu, George Lee, Yifei Ming, Binz Roy, Varun Sakalkar, Vishy Tirumalashetty, Burak Gokturk, Tomas Pfister, <span class="author-self">Chen-Yu Lee</span></span>
-				<b><a href="https://arxiv.org/">arXiv 2026</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2610.30537">Paper</a> <span class="sep">&middot;</span> <a href="https://ple-bench.com/">Project Page</a> <span class="sep">&middot;</span> <a href="https://cloud.google.com/blog/products/ai-machine-learning/introducing-physical-engineerings-last-exam-for-agents">Blog</a> <span class="sep">&middot;</span> <a href="https://www.kaggle.com/competitions/physical-engineerings-last-exam">Kaggle Challenge</a> <span class="sep dash">&mdash;</span> <span class="honor">In partnership with <a href="https://www.mercor.com/blog/introducing-physical-engineering-s-last-exam-ple-with-google-cloud-ai-research/">Mercor</a> (part of <a href="https://www.mercor.com/apex/">APEX</a>)</span>
+				<b><a href="https://arxiv.org/">arXiv 2026</a></b> <span class="sep">&middot;</span> <a href="https://arxiv.org/pdf/2610.30537">Paper</a> <span class="sep">&middot;</span> <a href="https://ple-bench.com/">Project Page</a> <span class="sep">&middot;</span> <a href="https://cloud.google.com/blog/products/ai-machine-learning/introducing-physical-engineerings-last-exam-for-agents">Blog</a> <span class="sep">&middot;</span> <a href="https://www.kaggle.com/competitions/physical-engineerings-last-exam">Kaggle</a> <span class="sep">&middot;</span> <a href="https://huggingface.co/datasets/google/physical-engineerings-last-exam">Dataset</a> <span class="sep dash">&mdash;</span> <span class="honor">In partnership with <a href="https://www.mercor.com/blog/introducing-physical-engineering-s-last-exam-ple-with-google-cloud-ai-research/">Mercor</a> (part of <a href="https://www.mercor.com/apex/">APEX</a>)</span>
+				<span class="badges"><a class="badge" href="assets/images/ple-hf-trending.png">#1 Trending</a><a class="badge" href="assets/images/ple-hf-downloads.png">#2 Most downloaded</a><span class="badge-note">benchmark on Hugging Face, Nov 2026</span></span>
 				</div>
 
 				<div class="paper-entry" >
